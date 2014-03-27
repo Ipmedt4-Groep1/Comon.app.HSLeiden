@@ -35,18 +35,19 @@ public final class R {
         public static final int twiiter=0x7f02000b;
     }
     public static final class id {
-        public static final int Deelnemer1=0x7f080008;
-        public static final int Opdrachtgever1=0x7f08000a;
-        public static final int action_settings=0x7f08000b;
-        public static final int deelnemerButton=0x7f080001;
+        public static final int Deelnemer1=0x7f080009;
+        public static final int Opdrachtgever1=0x7f08000b;
+        public static final int action_settings=0x7f08000c;
+        public static final int deelnemerButton=0x7f080004;
         public static final int imageView1=0x7f080000;
-        public static final int infoButton=0x7f080004;
-        public static final int kalenderButton=0x7f080005;
-        public static final int nieuwsButton=0x7f080002;
-        public static final int opdrachtgeverButton=0x7f080003;
-        public static final int progressBar1=0x7f080009;
+        public static final int imageView2=0x7f080001;
+        public static final int infoButton=0x7f080002;
+        public static final int kalenderButton=0x7f080007;
+        public static final int nieuwsButton=0x7f080003;
+        public static final int opdrachtgeverButton=0x7f080005;
+        public static final int progressBar1=0x7f08000a;
         public static final int stemButton=0x7f080006;
-        public static final int textView1=0x7f080007;
+        public static final int textView1=0x7f080008;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
