@@ -1,8 +1,12 @@
 Comon.app.HSLeiden
 ==================
 
-UPdate van peter
+De App wordt gemaakt voor het project IPMEDT4 door groep 1.
 
-UPdate van jaimy
+Deze groep bestaat uit:
+Jaimy Rademaker
+Jelle Scheer
+Peter de Ridder
 
-UPdate 2 van jaimy
+Deze app wordt gemaakt in samenwerking met HSleiden en Area071.
+
