@@ -21,17 +21,18 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
-        public static final int bedrijven=0x7f020000;
-        public static final int comon=0x7f020001;
-        public static final int comon_launcher=0x7f020002;
-        public static final int deelnemers=0x7f020003;
-        public static final int facebook=0x7f020004;
-        public static final int ic_launcher=0x7f020005;
-        public static final int info=0x7f020006;
-        public static final int kalender=0x7f020007;
-        public static final int nieuws=0x7f020008;
-        public static final int stemmen=0x7f020009;
-        public static final int twiiter=0x7f02000a;
+        public static final int balk_afbeelding=0x7f020000;
+        public static final int bedrijven=0x7f020001;
+        public static final int comon=0x7f020002;
+        public static final int comon_launcher=0x7f020003;
+        public static final int deelnemers=0x7f020004;
+        public static final int facebook=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int info=0x7f020007;
+        public static final int kalender=0x7f020008;
+        public static final int nieuws=0x7f020009;
+        public static final int stemmen=0x7f02000a;
+        public static final int twiiter=0x7f02000b;
     }
     public static final class id {
         public static final int Deelnemer1=0x7f080008;
