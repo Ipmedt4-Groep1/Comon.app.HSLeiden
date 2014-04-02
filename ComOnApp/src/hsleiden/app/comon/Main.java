@@ -26,6 +26,7 @@ public class Main extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		buttonListener();
+		
 	}
 	
 	//de buttonListener methode zorgt ervoor dat er een nieuwe activity (pagina in de app) wordt aangeroepen wanneer
@@ -35,7 +36,7 @@ public class Main extends Activity {
 		final Context context = this;
 		//de knop voor de betrokken opdrachtgevers
 		opdrachtgeverButton = (ImageButton) findViewById(R.id.opdrachtgeverButton);
-		opdrachtgeverButton.setOnClickListener(new OnClickListener() 
+		opdrachtgeverButton.setOnClickListener(new OnClickListener()
 		{
 			@Override
 			public void onClick(View arg0) 

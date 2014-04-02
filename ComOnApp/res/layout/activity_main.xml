@@ -105,7 +105,9 @@ android:layout_height="match_parent" >
                android:layout_height="wrap_content"
                android:layout_alignParentBottom="true"
                android:src="@drawable/balk_afbeelding" 
-               android:scaleType="fitCenter" android:adjustViewBounds="true" />
+               android:scaleType="fitCenter" 
+               android:adjustViewBounds="true" />
+           
            
     
 
