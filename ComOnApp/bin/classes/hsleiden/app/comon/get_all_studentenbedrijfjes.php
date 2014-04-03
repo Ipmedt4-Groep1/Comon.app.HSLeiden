@@ -14,26 +14,26 @@ require_once __DIR__ . '/db_connect.php';
 $db = new DB_CONNECT();
  
 // get all products from products table
-$result = mysql_query("SELECT *FROM deelnemers ") or die(mysql_error());
+$result = mysql_query("SELECT *FROM studentenbedrijfjes ") or die(mysql_error());
  
 // check for empty result
 if (mysql_num_rows($result) > 0) {
     // looping through all results
     // products node
-    $response["deelnemers"] = array();
+    $response["studentenbedrijfjes"] = array();
  
     while ($row = mysql_fetch_array($result)) {
         // temp user array
-        $deelnemers = array();
-		$deelnemers ["pid"] = $row["pid"];
-        $deelnemers	["naam"] = $row["naam"];
-		$deelnemers	["logo"] = $row["logo"];
-		$deelnemers	["deelnemers"] = $row["deelnemers"];
+        $studentenbedrijfjes = array();
+		$studentenbedrijfjes ["pid"] = $row["pid"];
+        $studentenbedrijfjes ["naam"] = $row["naam"];
+		$studentenbedrijfjes ["logo"] = $row["logo"];
+		$studentenbedrijfjes ["studentenbedrijfjes"] = $row["studentenbedrijfjes"];
         		
      
  
         // push single product into final response array
-        array_push($response["deelnemers"], $deelnemers);
+        array_push($response["studentenbedrijfjes"], $studentenbedrijfjes);
     }
     // success
     $response["success"] = 1;
@@ -43,7 +43,7 @@ if (mysql_num_rows($result) > 0) {
 } else {
     // no products found
     $response["success"] = 0;
-    $response["message"] = "No Deelnemers found";
+    $response["message"] = "No Studentenbedrijfjes found";
  
     // echo no users JSON
     echo json_encode($response);
