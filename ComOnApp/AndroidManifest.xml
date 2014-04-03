@@ -16,7 +16,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="hsleiden.app.comon.MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+			android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 
@@ -25,28 +26,35 @@
         </activity>
         <activity
             android:name="hsleiden.app.comon.Main"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name="hsleiden.app.comon.Stemmen">
+            android:name="hsleiden.app.comon.Stemmen"
+            android:screenOrientation="portrait">            
         </activity>
         <activity
-            android:name="hsleiden.app.comon.Deelnemers">
+            android:name="hsleiden.app.comon.Deelnemers"
+            android:screenOrientation="portrait">            
         </activity>
         <activity
-            android:name="hsleiden.app.comon.Kalender">
+            android:name="hsleiden.app.comon.Kalender"
+            android:screenOrientation="portrait">                        
         </activity>
         <activity
-            android:name="hsleiden.app.comon.Opdrachtgevers">
+            android:name="hsleiden.app.comon.Opdrachtgevers"
+            android:screenOrientation="portrait">            
         </activity>
         <activity
-            android:name="hsleiden.app.comon.Info">
+            android:name="hsleiden.app.comon.Info"
+            android:screenOrientation="portrait">                        
         </activity>
         <activity
-            android:name="hsleiden.app.comon.Nieuws">
+            android:name="hsleiden.app.comon.Nieuws"
+           	android:screenOrientation="portrait">            
         </activity>
     </application>
 

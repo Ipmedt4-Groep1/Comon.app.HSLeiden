@@ -32,13 +32,30 @@ public final class R {
         public static final int kalender=0x7f020008;
         public static final int menu_bedrijven=0x7f020009;
         public static final int nieuws=0x7f02000a;
-        public static final int stemmen=0x7f02000b;
-        public static final int twiiter=0x7f02000c;
+        public static final int stem_knop=0x7f02000b;
+        public static final int stemmen=0x7f02000c;
+        public static final int twiiter=0x7f02000d;
     }
     public static final class id {
         public static final int Deelnemer1=0x7f08000d;
+        public static final int RadioButton01=0x7f080020;
+        public static final int RadioButton02=0x7f080013;
+        public static final int RadioButton03=0x7f080014;
+        public static final int RadioButton04=0x7f08001f;
+        public static final int RadioButton05=0x7f08001a;
+        public static final int RadioButton06=0x7f080021;
+        public static final int RadioButton07=0x7f080022;
+        public static final int RadioButton08=0x7f080018;
+        public static final int RadioButton09=0x7f080015;
+        public static final int RadioButton10=0x7f080019;
+        public static final int RadioButton11=0x7f08001b;
+        public static final int RadioButton12=0x7f080016;
+        public static final int RadioButton13=0x7f080017;
+        public static final int RadioButton14=0x7f08001d;
+        public static final int RadioButton15=0x7f08001c;
+        public static final int RadioButton16=0x7f080023;
         public static final int RelativeLayout1=0x7f080000;
-        public static final int action_settings=0x7f080013;
+        public static final int action_settings=0x7f080025;
         public static final int deelnemerButton=0x7f080007;
         public static final int imageButton1=0x7f080012;
         public static final int imageView1=0x7f080001;
@@ -51,7 +68,9 @@ public final class R {
         public static final int opdrachtgeverButton=0x7f080006;
         public static final int pid=0x7f08000e;
         public static final int progressBar1=0x7f080011;
+        public static final int radioButton1=0x7f08001e;
         public static final int stemButton=0x7f08000a;
+        public static final int stembutton=0x7f080024;
         public static final int tableRow1=0x7f080002;
         public static final int tableRow2=0x7f080005;
         public static final int tableRow3=0x7f080008;
