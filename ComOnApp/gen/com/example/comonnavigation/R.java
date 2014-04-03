@@ -21,6 +21,7 @@ public final class R {
         public static final int activity_vertical_margin=0x7f040001;
     }
     public static final class drawable {
+<<<<<<< HEAD
         public static final int appicon=0x7f020000;
         public static final int arrow_left=0x7f020001;
         public static final int arrow_right=0x7f020002;
@@ -76,6 +77,49 @@ public final class R {
         public static final int gridview=0x7f080010;
         public static final int header=0x7f08000c;
         public static final int imageButton1=0x7f08001e;
+=======
+        public static final int balk_afbeelding=0x7f020000;
+        public static final int bedrijven=0x7f020001;
+        public static final int comon=0x7f020002;
+        public static final int comon_launcher=0x7f020003;
+        public static final int deelnemers=0x7f020004;
+        public static final int facebook=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int info=0x7f020007;
+        public static final int kalender=0x7f020008;
+        public static final int menu_bedrijven=0x7f020009;
+        public static final int menu_deelnemers=0x7f02000a;
+        public static final int menu_info=0x7f02000b;
+        public static final int menu_kalender=0x7f02000c;
+        public static final int menu_nieuws=0x7f02000d;
+        public static final int menu_stem=0x7f02000e;
+        public static final int nieuws=0x7f02000f;
+        public static final int stem_knop=0x7f020010;
+        public static final int stemmen=0x7f020011;
+        public static final int twiiter=0x7f020012;
+    }
+    public static final class id {
+        public static final int RadioButton01=0x7f08001f;
+        public static final int RadioButton02=0x7f080012;
+        public static final int RadioButton03=0x7f080013;
+        public static final int RadioButton04=0x7f08001e;
+        public static final int RadioButton05=0x7f080019;
+        public static final int RadioButton06=0x7f080020;
+        public static final int RadioButton07=0x7f080021;
+        public static final int RadioButton08=0x7f080017;
+        public static final int RadioButton09=0x7f080014;
+        public static final int RadioButton10=0x7f080018;
+        public static final int RadioButton11=0x7f08001a;
+        public static final int RadioButton12=0x7f080015;
+        public static final int RadioButton13=0x7f080016;
+        public static final int RadioButton14=0x7f08001c;
+        public static final int RadioButton15=0x7f08001b;
+        public static final int RadioButton16=0x7f080022;
+        public static final int RelativeLayout1=0x7f080000;
+        public static final int action_settings=0x7f080024;
+        public static final int deelnemerButton=0x7f080007;
+        public static final int imageButton1=0x7f08000c;
+>>>>>>> d53e8f710903d88146562eaa3c2826a3a53d7fc4
         public static final int imageView1=0x7f080001;
         public static final int imageView2=0x7f08000b;
         public static final int infoButton=0x7f080003;
@@ -85,6 +129,7 @@ public final class R {
         public static final int next=0x7f08000f;
         public static final int nieuwsButton=0x7f080004;
         public static final int opdrachtgeverButton=0x7f080006;
+<<<<<<< HEAD
         public static final int pid=0x7f08001a;
         public static final int previous=0x7f08000d;
         public static final int progressBar1=0x7f08001d;
@@ -109,6 +154,29 @@ public final class R {
         public static final int nieuws_layout=0x7f030008;
         public static final int opdrachtgevers_layout=0x7f030009;
         public static final int stemmen_layout=0x7f03000a;
+=======
+        public static final int pid=0x7f08000e;
+        public static final int progressBar1=0x7f080011;
+        public static final int radioButton1=0x7f08001d;
+        public static final int stemButton=0x7f08000a;
+        public static final int stembutton=0x7f080023;
+        public static final int tableRow1=0x7f080002;
+        public static final int tableRow2=0x7f080005;
+        public static final int tableRow3=0x7f080008;
+        public static final int textView1=0x7f08000d;
+    }
+    public static final class layout {
+        public static final int activity_main=0x7f030000;
+        public static final int deelnemers_layout=0x7f030001;
+        public static final int info_layout=0x7f030002;
+        public static final int kalender_layout=0x7f030003;
+        public static final int list_deelnemers_layout=0x7f030004;
+        public static final int list_opdrachtgevers_layout=0x7f030005;
+        public static final int main_activity=0x7f030006;
+        public static final int nieuws_layout=0x7f030007;
+        public static final int opdrachtgevers_layout=0x7f030008;
+        public static final int stemmen_layout=0x7f030009;
+>>>>>>> d53e8f710903d88146562eaa3c2826a3a53d7fc4
     }
     public static final class menu {
         public static final int main=0x7f070000;
