@@ -5,10 +5,11 @@ android:id="@+id/RelativeLayout1"
 android:layout_width="wrap_content"
 android:layout_height="match_parent" >
 
-
+    
 <LinearLayout 
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+   
     android:orientation="vertical">
     <!-- Main ListView
          Always give id value as list(@android:id/list)
@@ -16,20 +17,27 @@ android:layout_height="match_parent" >
 
     <ListView
         android:id="@android:id/list"
+        android:layout_marginTop="60dp"
         android:layout_width="fill_parent"
-        android:layout_height="452dp" >
+        android:layout_height="420dp" >
     </ListView>
 
-    
  </LinearLayout>
  
-<ImageView
+    <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
-         android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="true"
         android:src="@drawable/balk_afbeelding" />
 
-        </RelativeLayout>
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+         android:background="@null"
+        android:src="@drawable/menu_bedrijven" />
+    
+    </RelativeLayout>

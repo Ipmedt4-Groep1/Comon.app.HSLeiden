@@ -27,6 +27,7 @@ if (mysql_num_rows($result) > 0) {
         $opdrachtgevers = array();
 		$opdrachtgevers ["pid"] = $row["pid"];
         $opdrachtgevers	["naam"] = $row["naam"];
+		$opdrachtgevers	["logo"] = $row["logo"];
 		$opdrachtgevers	["opdrachtgevers"] = $row["opdrachtgevers"];
         		
      

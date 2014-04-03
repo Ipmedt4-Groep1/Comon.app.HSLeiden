@@ -30,24 +30,27 @@ public final class R {
         public static final int ic_launcher=0x7f020006;
         public static final int info=0x7f020007;
         public static final int kalender=0x7f020008;
-        public static final int nieuws=0x7f020009;
-        public static final int stemmen=0x7f02000a;
-        public static final int twiiter=0x7f02000b;
+        public static final int menu_bedrijven=0x7f020009;
+        public static final int nieuws=0x7f02000a;
+        public static final int stemmen=0x7f02000b;
+        public static final int twiiter=0x7f02000c;
     }
     public static final class id {
         public static final int Deelnemer1=0x7f08000d;
         public static final int RelativeLayout1=0x7f080000;
-        public static final int action_settings=0x7f080011;
+        public static final int action_settings=0x7f080013;
         public static final int deelnemerButton=0x7f080007;
+        public static final int imageButton1=0x7f080012;
         public static final int imageView1=0x7f080001;
         public static final int imageView2=0x7f08000b;
         public static final int infoButton=0x7f080003;
         public static final int kalenderButton=0x7f080009;
+        public static final int logo=0x7f080010;
         public static final int naam=0x7f08000f;
         public static final int nieuwsButton=0x7f080004;
         public static final int opdrachtgeverButton=0x7f080006;
         public static final int pid=0x7f08000e;
-        public static final int progressBar1=0x7f080010;
+        public static final int progressBar1=0x7f080011;
         public static final int stemButton=0x7f08000a;
         public static final int tableRow1=0x7f080002;
         public static final int tableRow2=0x7f080005;
