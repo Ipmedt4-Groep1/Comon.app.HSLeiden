@@ -20,7 +20,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Kalender extends Activity {
+public class CalendarView extends Activity {
 
 	public GregorianCalendar month, itemmonth;// calendar instances.
 
@@ -29,11 +29,8 @@ public class Kalender extends Activity {
 							// marker.
 	public ArrayList<String> items; // container to store calendar items which
 									// needs showing the event marker
-		
-	public TextView evenementTitel, evenementDatum, evenementOmschrijving, evenementLocatie;
 
 	public void onCreate(Bundle savedInstanceState) {
-		
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.calendar);
 		 Locale.setDefault( Locale.US );
@@ -45,11 +42,6 @@ public class Kalender extends Activity {
 
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(adapter);
-		
-		evenementTitel = (TextView) findViewById(R.id.evenementTitel);
-		evenementDatum = (TextView) findViewById(R.id.evenementDatum);
-		evenementOmschrijving = (TextView) findViewById(R.id.evenementOmschrijving);
-		evenementLocatie = (TextView) findViewById(R.id.evenementLocatie);
 
 		handler = new Handler();
 		handler.post(calendarUpdater);
@@ -99,81 +91,13 @@ public class Kalender extends Activity {
 					refreshCalendar();
 				}
 				((CalendarAdapter) parent.getAdapter()).setSelected(v);
-				
-				if (selectedGridDate.equals("2014-01-01"))
-				{
-					evenementTitel.setText("Sander slaan");
-					evenementDatum.setText("2014-01-01");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
-					showToast("Sander slaan");
-				}
-				else if (selectedGridDate.equals("2014-02-02"))
-				{
-					evenementTitel.setText("Dennis slaan");
-					showToast("Dennis slaan");
-				}
-				else if (selectedGridDate.equals("2014-03-03"))
-				{
-					evenementTitel.setText("Peter slaan");
-					showToast("Peter slaan");
-				}
-				else if (selectedGridDate.equals("2014-04-04"))
-				{
-					evenementTitel.setText("Jaimy slaan");
-					showToast("Jaimy slaan");
-				}
-				else if (selectedGridDate.equals("2014-05-05"))
-				{
-					evenementTitel.setText("Jelle aaien");
-					showToast("Jelle aaien");
-				}
-				else if (selectedGridDate.equals("2014-06-06"))
-				{
-					evenementTitel.setText("William slaan");
-					showToast("William slaan");
-				}
-				else if (selectedGridDate.equals("2014-07-07"))
-				{
-					evenementTitel.setText("Gydo slaan");
-					showToast("Gydo slaan");
-				}
-				else if (selectedGridDate.equals("2014-08-08"))
-				{
-					evenementTitel.setText("Barry slaan");
-					showToast("Barry slaan");
-				}
-				else if (selectedGridDate.equals("2014-09-09"))
-				{
-					evenementTitel.setText("Ami slaan");
-					showToast("Ami slaan");
-				}
-				else if (selectedGridDate.equals("2014-10-10"))
-				{
-					evenementTitel.setText("Rutger slaan");
-					showToast("Rutger slaan");
-				}
-				else if (selectedGridDate.equals("2014-11-11"))
-				{
-					evenementTitel.setText("Jos slaan");
-					showToast("Jos slaan");
-				}
-				else if (selectedGridDate.equals("2014-12-12"))
-				{
-					evenementTitel.setText("Vincent slaan");
-					showToast("Vincent slaan");
-				}
-				else
-				{
-					showToast("Geen evenement!");
-				}
 
-	//			showToast(selectedGridDate);
+				showToast(selectedGridDate);
 
 			}
 		});
 	}
-	
+
 	protected void setNextMonth() {
 		if (month.get(GregorianCalendar.MONTH) == month
 				.getActualMaximum(GregorianCalendar.MONTH)) {
@@ -199,9 +123,9 @@ public class Kalender extends Activity {
 	}
 
 	protected void showToast(String string) {
-		Toast.makeText(this, string, Toast.LENGTH_LONG).show();
+		Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
 
-	} 
+	}
 
 	public void refreshCalendar() {
 		TextView title = (TextView) findViewById(R.id.title);
@@ -222,38 +146,22 @@ public class Kalender extends Activity {
 			// Print dates of the current week
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
 			String itemvalue;
-			for (int i = 0; i < 712; i++) {
+			for (int i = 0; i < 8; i++) {
 				itemvalue = df.format(itemmonth.getTime());
 				itemmonth.add(GregorianCalendar.DATE, 1);
-				items.add("2014-01-01");
-				items.add("2014-02-02");
-				items.add("2014-03-03");
-				items.add("2014-04-04");
-				items.add("2014-05-05");
-				items.add("2014-06-06");
-				items.add("2014-07-07");
-				items.add("2014-08-08");
-				items.add("2014-09-09");
-				items.add("2014-10-10");
-				items.add("2014-11-11");
+				items.add("2014-09-12");
+				items.add("2014-10-07");
+				items.add("2014-10-15");
+				items.add("2014-10-20");
+				items.add("2014-11-30");
+				items.add("2014-11-28");
 				items.add("2014-12-12");
+				
 			}
 
 			adapter.setItems(items);
 			adapter.notifyDataSetChanged();
+			items.clear();
 		}
 	};
-	
-	public void getItems()
-	{
-		
-	String gelezenArray = "";
-		
-		for (String s : items)
-		{
-			gelezenArray += s + "\t";
-		}
-		
-	System.out.println(gelezenArray);
-	}
 }
