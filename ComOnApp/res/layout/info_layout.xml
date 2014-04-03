@@ -25,35 +25,25 @@ android:layout_height="match_parent" >
         android:gravity="center"
         android:orientation="vertical" >
         
-        <ImageView
-            android:id="@+id/imageView1"
+            <TableLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
-            android:background="@null"
-            android:src="@drawable/comon" 
-            android:scaleType="fitCenter" android:adjustViewBounds="true"
-             />
-
-        <TableLayout
-            android:layout_width="wrap_content"
-    		android:layout_height="wrap_content"    
+    		android:layout_height="wrap_content"   
+    		android:layout_marginTop="80dp"             
     		android:layout_gravity="center" >
 
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
-
+			<ScrollView>
                  <TextView
      	   		android:id="@+id/textView1"
-        		android:layout_width="wrap_content"
+        		android:layout_width="300dp"
         		android:layout_height="wrap_content"
         		android:gravity="center"
-        		android:text="ComOn is kort gezegd de gelegenheid voor bedrijven hun communicatie in de breedste zin des woords of heel gericht in een tijdbestek van twee maanden te realiseren, optimaliseren of uit te denken. Kortom, communicatie advies op maat en van hoog niveau. ComOn is gebaseerd op het leerwerkbedrijf principe en biedt middels een zeer aansprekend programma studenten en bedrijven de kans om zich te ontwikkelen. 
-        		
-ComOn is een initiatief vanuit de opleiding Communicatie van de Hogeschool Leiden, het vlaggenschip van het cluster Management en Bedrijf. Het programma bestaat uit een aantal onderdelen en beslaat een periode van 10 weken, van februari tot april 2014. De studentenbedrijven van het tweede jaar van de opleiding vormen in vijftallen echte communicatiebedrijven. Voor de studenten zelf is het een intensieve maar leerzame periode. Niet alleen zijn het tien weken vol spanning, nieuwe indrukken, verwachtingen van de opdrachtgevers, het bedrijfsmatig moeten (samen)werken maar juist de combinatie van leren en werken maakt het zo intens. Toen weken vol met gastcolleges van wervende experts vanuit diverse bedrijven, theorie van anderhalf jaar opleiding die in de praktijk moet worden gebracht en het met goed resultaat afronden van de verkregen opdracht. De eisen vanuit de opleiding zijn hoog. Datzelfde geldt voor de verwachtingen en criteria waarmee de bedrijven hun opdrachten aanbesteden. Het werken onder druk in een realtime omgeving, dat is ComOn." 
+        		android:text="ComOn is de gelegenheid voor bedrijven om hun communicatie in een tijdbestek van twee maanden te realiseren, optimaliseren of uit te denken. Kortom, communicatie advies op maat en van hoog niveau. ComOn is gebaseerd op het leerwerkbedrijf principe en biedt middels een zeer aansprekend programma studenten en bedrijven de kans om zich te ontwikkelen.\n\nComOn is een initiatief vanuit de opleiding Communicatie van de Hogeschool Leiden, het vlaggenschip van het cluster Management en Bedrijf. Het programma bestaat uit een aantal onderdelen en beslaat een periode van 10 weken, van februari tot april 2014.\n\nDe studentenbedrijven van het tweede jaar van de opleiding vormen in vijftallen echte communicatiebedrijven. Voor de studenten zelf is het een intensieve maar leerzame periode. Niet alleen zijn het tien weken vol spanning, nieuwe indrukken, verwachtingen van de opdrachtgevers, het bedrijfsmatig moeten (samen)werken maar juist de combinatie van leren en werken maakt het zo intens. Toen weken vol met gastcolleges van wervende experts vanuit diverse bedrijven, theorie van anderhalf jaar opleiding die in de praktijk moet worden gebracht en het met goed resultaat afronden van de verkregen opdracht. De eisen vanuit de opleiding zijn hoog. Datzelfde geldt voor de verwachtingen en criteria waarmee de bedrijven hun opdrachten aanbesteden. Het werken onder druk in een realtime omgeving, dat is ComOn.\n\n\n\n" 
         		/>
+            </ScrollView>     
             </TableRow>
 			
 			<!--  
