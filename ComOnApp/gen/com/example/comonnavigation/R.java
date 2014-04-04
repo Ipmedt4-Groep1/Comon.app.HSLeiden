@@ -57,25 +57,26 @@ public final class R {
         public static final int twiiter=0x7f020021;
     }
     public static final class id {
-        public static final int RadioButton01=0x7f08002c;
-        public static final int RadioButton02=0x7f08001f;
-        public static final int RadioButton03=0x7f080020;
-        public static final int RadioButton04=0x7f08002b;
-        public static final int RadioButton05=0x7f080026;
-        public static final int RadioButton06=0x7f08002d;
-        public static final int RadioButton07=0x7f08002e;
-        public static final int RadioButton08=0x7f080024;
-        public static final int RadioButton09=0x7f080021;
-        public static final int RadioButton10=0x7f080025;
-        public static final int RadioButton11=0x7f080027;
-        public static final int RadioButton12=0x7f080022;
-        public static final int RadioButton13=0x7f080023;
-        public static final int RadioButton14=0x7f080029;
-        public static final int RadioButton15=0x7f080028;
-        public static final int RadioButton16=0x7f08002f;
+        public static final int RadioButton01=0x7f080031;
+        public static final int RadioButton02=0x7f080024;
+        public static final int RadioButton03=0x7f080025;
+        public static final int RadioButton04=0x7f080030;
+        public static final int RadioButton05=0x7f08002b;
+        public static final int RadioButton06=0x7f080032;
+        public static final int RadioButton07=0x7f080033;
+        public static final int RadioButton08=0x7f080029;
+        public static final int RadioButton09=0x7f080026;
+        public static final int RadioButton10=0x7f08002a;
+        public static final int RadioButton11=0x7f08002c;
+        public static final int RadioButton12=0x7f080027;
+        public static final int RadioButton13=0x7f080028;
+        public static final int RadioButton14=0x7f08002e;
+        public static final int RadioButton15=0x7f08002d;
+        public static final int RadioButton16=0x7f080034;
         public static final int RelativeLayout1=0x7f080000;
         public static final int Spacebreaker=0x7f080011;
-        public static final int action_settings=0x7f080031;
+        public static final int action_settings=0x7f080036;
+        public static final int avatar=0x7f08001e;
         public static final int date=0x7f080016;
         public static final int date_icon=0x7f080017;
         public static final int deelnemerButton=0x7f080007;
@@ -89,24 +90,28 @@ public final class R {
         public static final int imageView1=0x7f080001;
         public static final int imageView2=0x7f08000b;
         public static final int imageView3=0x7f080019;
+        public static final int imageView4=0x7f080022;
         public static final int infoButton=0x7f080003;
         public static final int kalenderButton=0x7f080009;
         public static final int logo=0x7f08001d;
+        public static final int message=0x7f080020;
         public static final int naam=0x7f08001c;
         public static final int next=0x7f08000f;
         public static final int nieuwsButton=0x7f080004;
         public static final int opdrachtgeverButton=0x7f080006;
         public static final int pid=0x7f08001b;
         public static final int previous=0x7f08000d;
-        public static final int progressBar1=0x7f08001e;
-        public static final int radioButton1=0x7f08002a;
+        public static final int progressBar1=0x7f080021;
+        public static final int radioButton1=0x7f08002f;
         public static final int stemButton=0x7f08000a;
-        public static final int stembutton=0x7f080030;
+        public static final int stembutton=0x7f080035;
         public static final int tableRow1=0x7f080002;
         public static final int tableRow2=0x7f080005;
         public static final int tableRow3=0x7f080008;
         public static final int textView1=0x7f08001a;
         public static final int title=0x7f08000e;
+        public static final int twitterlist1=0x7f080023;
+        public static final int username=0x7f08001f;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
@@ -116,11 +121,13 @@ public final class R {
         public static final int info_layout=0x7f030004;
         public static final int kalender_layout=0x7f030005;
         public static final int list_deelnemers_layout=0x7f030006;
-        public static final int list_opdrachtgevers_layout=0x7f030007;
-        public static final int main_activity=0x7f030008;
-        public static final int nieuws_layout=0x7f030009;
-        public static final int opdrachtgevers_layout=0x7f03000a;
-        public static final int stemmen_layout=0x7f03000b;
+        public static final int list_nieuws_layout=0x7f030007;
+        public static final int list_opdrachtgevers_layout=0x7f030008;
+        public static final int main_activity=0x7f030009;
+        public static final int nieuws_layout=0x7f03000a;
+        public static final int opdrachtgevers_layout=0x7f03000b;
+        public static final int stemmen_layout=0x7f03000c;
+        public static final int twit_list=0x7f03000d;
     }
     public static final class menu {
         public static final int main=0x7f070000;
