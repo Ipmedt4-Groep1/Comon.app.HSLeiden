@@ -67,6 +67,7 @@
     android:id="@+id/evenementTitel"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:text="Geen evenement op deze datum"
     android:textAppearance="?android:attr/textAppearanceMedium" />
 
 <TextView
