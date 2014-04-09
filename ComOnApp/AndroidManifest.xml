@@ -58,6 +58,14 @@
             android:name="hsleiden.app.comon.Nieuws"
            	android:screenOrientation="portrait">            
         </activity>
+        <activity
+            android:name="hsleiden.app.comon.DetailOpdrachtgever"
+           	android:screenOrientation="portrait">            
+        </activity>
+        <activity
+            android:name="hsleiden.app.comon.DetailDeelnemer"
+           	android:screenOrientation="portrait">            
+        </activity>
     </application>
 
 </manifest>
