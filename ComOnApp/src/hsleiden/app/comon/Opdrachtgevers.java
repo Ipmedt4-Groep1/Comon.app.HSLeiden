@@ -29,7 +29,8 @@ public class Opdrachtgevers extends ListActivity {
  
     // Progress Dialog
     private ProgressDialog pDialog;
- 
+    public static int opdrachtgeverID;
+    
     // Creating JSON Parser object
     JSONParser jParser = new JSONParser();
  
@@ -76,58 +77,84 @@ public class Opdrachtgevers extends ListActivity {
              	switch (position)
              	{
              	case 0:
-             		//Intent intent = new Intent(getApplicationContext(), Detail.class);
-             		//startActivity(intent);
+             		opdrachtgeverID = 1;
+             		Intent opdrachtgever1 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever1);
              		break;
              	case 1:
-                  	//Intent intent = new Intent(getApplicationContext(), Info.class);
-    	            //startActivity(intent);
+             		opdrachtgeverID = 2;
+             		Intent opdrachtgever2 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever2);
              		break;
              	case 2:
-             		
+             		opdrachtgeverID = 3;
+             		Intent opdrachtgever3 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever3);
              		break;
              	case 3:
-             		
-             		break;
+             		opdrachtgeverID = 4;
+             		Intent opdrachtgever4 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever4);;
              	case 4:
-             		
+             		opdrachtgeverID = 5;
+             		Intent opdrachtgever5 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever5);
              		break;
              	case 5:
-             		
+             		opdrachtgeverID = 6;
+             		Intent opdrachtgever6 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever6);
              		break;
              	case 6:
-             		
+             		opdrachtgeverID = 7;
+             		Intent opdrachtgever7 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever7);
              		break;
              	case 7:
-             		
+             		opdrachtgeverID = 8;
+             		Intent opdrachtgever8 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever8);
              		break;
              	case 8:
-             		
+             		opdrachtgeverID = 9;
+             		Intent opdrachtgever9 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever9);
              		break;
              	case 9:
-             		
+             		opdrachtgeverID = 10;
+             		Intent opdrachtgever10 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever10);
              		break;
              	case 10:
-             		
+             		opdrachtgeverID = 11;
+             		Intent opdrachtgever11 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever11);
              		break;
              	case 11:
-             		
+             		opdrachtgeverID = 12;
+             		Intent opdrachtgever12 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever12);
              		break;
              	case 12:
-             		
+             		opdrachtgeverID = 13;
+             		Intent opdrachtgever13 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever13);
              		break;
              	case 13:
-             		
+             		opdrachtgeverID = 14;
+             		Intent opdrachtgever14 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever14);
              		break;
              	case 14:
-             		
+             		opdrachtgeverID = 15;
+             		Intent opdrachtgever15 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever15);
              		break;
              	case 15:
-             		
-             		break;
-             	case 16:
-             		
-             		break;		
+             		opdrachtgeverID = 16;
+             		Intent opdrachtgever16 = new Intent(getApplicationContext(), DetailOpdrachtgever.class);
+             		startActivity(opdrachtgever16);
+             		break;	
              	}
             }
         });
