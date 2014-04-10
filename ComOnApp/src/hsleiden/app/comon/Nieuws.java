@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.Window;
 import android.widget.ArrayAdapter;
 
 import com.example.comonnavigation.R;
@@ -37,6 +38,7 @@ public class Nieuws extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		activity = this;
 		setContentView(R.layout.nieuws_layout);
 

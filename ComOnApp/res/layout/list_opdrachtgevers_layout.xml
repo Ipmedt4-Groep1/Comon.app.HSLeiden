@@ -19,10 +19,11 @@
         android:paddingTop="6dip"
         android:paddingLeft="6dip"
         android:textSize="17dip"
-        android:textStyle="bold" />
+        android:textStyle="bold" 
+        android:textColor="#98c00e"/>
     
      <ImageView
-        android:id="@+id/logo"
+        android:id="@+id/tumb"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:paddingTop="6dip"

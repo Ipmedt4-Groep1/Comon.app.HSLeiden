@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res/com.example.comonnavigation"
+android:id="@+id/RelativeLayout1"
+android:layout_width="wrap_content"
+android:layout_height="match_parent" >
+ 
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:layout_above="@+id/imageView1" >
+    
+    <LinearLayout 
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+     <TextView
+         android:id="@+id/inputNaam"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="5dip"
+         android:layout_marginBottom="15dip"
+         android:textSize="20dp"
+         android:singleLine="true" 
+         android:textColor="#98c00e"
+         />
+
+    
+    <TextView 
+        android:id="@+id/inputBeschrijving"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_margin="5dip"
+        android:textSize="15dp"
+        android:layout_marginBottom="15dip"
+       
+        />
+   
+    <TextView
+         android:id="@+id/inputWebsite"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:layout_margin="5dip"
+         android:layout_marginBottom="15dip"
+         android:textSize="20dp"
+         android:singleLine="true" />
+    </LinearLayout>
+ </ScrollView>
+    
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/balk_afbeelding" />
+ 
+</RelativeLayout>

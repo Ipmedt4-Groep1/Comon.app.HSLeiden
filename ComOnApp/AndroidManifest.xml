@@ -59,11 +59,15 @@
            	android:screenOrientation="portrait">            
         </activity>
         <activity
-            android:name="hsleiden.app.comon.DetailOpdrachtgever"
+            android:name="hsleiden.app.comon.DetailOpdrachtgevers"
            	android:screenOrientation="portrait">            
         </activity>
         <activity
-            android:name="hsleiden.app.comon.DetailDeelnemer"
+            android:name="hsleiden.app.comon.DetailDeelnemers"
+           	android:screenOrientation="portrait">            
+        </activity>
+           <activity
+            android:name="hsleiden.app.comon.D"
            	android:screenOrientation="portrait">            
         </activity>
     </application>
