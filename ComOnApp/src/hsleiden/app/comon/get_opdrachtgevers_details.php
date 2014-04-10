@@ -30,6 +30,8 @@ if (isset($_GET["pid"])) {
             $opdrachtgevers = array();
             $opdrachtgevers["pid"] = $result["pid"];
             $opdrachtgevers["naam"] = $result["naam"];
+			$opdrachtgevers["beschrijving"] = $result["beschrijving"];
+			$opdrachtgevers["website"] = $result["website"];
           
             // success
             $response["success"] = 1;
@@ -39,7 +41,7 @@ if (isset($_GET["pid"])) {
  
             array_push($response["opdrachtgevers"], $opdrachtgevers);
  
-            // echoing JSON response
+                    // echoing JSON response
             echo json_encode($response);
         } else {
             // no product found
