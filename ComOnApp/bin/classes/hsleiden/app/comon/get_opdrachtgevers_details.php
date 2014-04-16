@@ -32,6 +32,7 @@ if (isset($_GET["pid"])) {
             $opdrachtgevers["naam"] = $result["naam"];
 			$opdrachtgevers["beschrijving"] = $result["beschrijving"];
 			$opdrachtgevers["website"] = $result["website"];
+			
           
             // success
             $response["success"] = 1;

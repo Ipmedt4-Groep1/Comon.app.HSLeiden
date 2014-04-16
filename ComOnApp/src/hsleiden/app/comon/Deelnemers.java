@@ -23,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class Deelnemers extends ListActivity {
@@ -67,15 +68,39 @@ public class Deelnemers extends ListActivity {
         // on seleting single product
         // launching Edit Product Screen
         lv.setOnItemClickListener(new OnItemClickListener() {
- 
+        	 
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) 
             {
-                 //getting values from selected ListItem
-                 //String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+//                 getting values from selected ListItem
+                 String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+                 
+                 Intent in = new Intent(getApplicationContext(),
+                         DetailDeelnemers.class);
+                 
+                 // sending pid to next activity
+                 in.putExtra(TAG_PID, pid);
+  
+                 // starting new activity and expecting some response back
+                 startActivityForResult(in, 100);
 
-             }
-        });
+            } });
+ 
+    }
+	
+    // Response from Edit Product Activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // if result code 100
+        if (resultCode == 100) {
+            // if result code 100 is received
+            // means user edited/deleted product
+            // reload this screen again
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
+        }
  
     }
 	
