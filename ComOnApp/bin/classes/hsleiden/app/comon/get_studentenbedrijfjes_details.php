@@ -19,7 +19,7 @@ if (isset($_GET["pid"])) {
     $pid = $_GET['pid'];
  
     // get a product from products table
-    $result = mysql_query("SELECT *FROM opdrachtgevers WHERE pid = $pid");
+    $result = mysql_query("SELECT *FROM studentenbedrijfjes WHERE pid = $pid");
  
     if (!empty($result)) {
         // check for empty result
@@ -27,20 +27,23 @@ if (isset($_GET["pid"])) {
  
             $result = mysql_fetch_array($result);
  
-            $opdrachtgevers = array();
-            $opdrachtgevers["pid"] = $result["pid"];
-            $opdrachtgevers["naam"] = $result["naam"];
-			$opdrachtgevers["beschrijving"] = $result["beschrijving"];
-			$opdrachtgevers["website"] = $result["website"];
-			
+            $studentenbedrijfjes = array();
+            $studentenbedrijfjes["pid"] = $result["pid"];
+            $studentenbedrijfjes["naam"] = $result["naam"];
+			$studentenbedrijfjes["soort"] = $result["soort"];
+			$studentenbedrijfjes["opdrachtgever"] = $result["opdrachtgever"];
+			$studentenbedrijfjes["beschrijving"] = $result["beschrijving"];
+			$studentenbedrijfjes["deelnemers"] = $result["deelnemers"];
+			$studentenbedrijfjes["website"] = $result["website"];
+			$studentenbedrijfjes["likes"] = $result["likes"];
           
             // success
             $response["success"] = 1;
  
             // user node
-            $response["opdrachtgevers"] = array();
+            $response["studentenbedrijfjes"] = array();
  
-            array_push($response["opdrachtgevers"], $opdrachtgevers);
+            array_push($response["studentenbedrijfjes"], $studentenbedrijfjes);
  
                     // echoing JSON response
             echo json_encode($response);

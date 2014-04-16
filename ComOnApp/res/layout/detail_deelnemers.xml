@@ -24,11 +24,13 @@ android:layout_height="match_parent" >
          android:singleLine="true" 
          android:textColor="#019fe1"
          />
+     
      <TextView 
         android:id="@+id/inputSoort"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:singleLine="false"
+        android:layout_margin="5dip"
         android:textSize="10dp"
         android:layout_marginBottom="15dip"
        
@@ -45,7 +47,48 @@ android:layout_height="match_parent" >
         android:layout_marginBottom="15dip"
        
         />
-   
+    
+<!--  Kop opdrachtgevers -->
+     <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:textSize="15dp"
+        android:layout_margin="5dip"
+        android:text="Opdrachtgever:" 
+        android:textStyle="bold"       />
+     
+    <TextView 
+        android:id="@+id/inputOpdrachtgever"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_margin="5dip"
+        android:textSize="15dp"
+        android:layout_marginBottom="15dip"
+         />
+    <!--  Kop Deelnemers -->
+     <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:textSize="15dp"
+        android:layout_margin="5dip"
+        android:text="Deelnemers:" 
+        android:textStyle="bold"       />   
+        
+    <TextView 
+        android:id="@+id/inputDeelnemers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_margin="5dip"
+        android:textSize="15dp"        
+        android:layout_marginBottom="15dip"
+       
+        />
+    
+     
     <TextView
          android:id="@+id/inputWebsite"
          android:layout_width="fill_parent"
@@ -53,7 +96,26 @@ android:layout_height="match_parent" >
          android:layout_margin="5dip"
          android:layout_marginBottom="15dip"
          android:textSize="20dp"
+         
          android:singleLine="true" />
+    
+     <ImageView
+        android:id="@+id/like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:src="@drawable/like" />
+     
+      <TextView 
+        android:id="@+id/inputLikes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false"
+        android:layout_margin="5dip"
+        android:textSize="15dp"        
+        android:layout_marginBottom="15dip"
+       
+        />
     </LinearLayout>
  </ScrollView>
     

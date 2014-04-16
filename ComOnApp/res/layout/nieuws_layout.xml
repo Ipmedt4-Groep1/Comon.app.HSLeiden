@@ -10,10 +10,17 @@ android:layout_height="match_parent" >
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
             android:background="@null"
+            android:layout_marginTop="5dp"
             android:src="@drawable/menu_nieuws" 
             android:scaleType="fitCenter" android:adjustViewBounds="true"
              />
-
+ <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"           
+            android:src="@drawable/kop_nieuws" />
 <ListView
     android:id="@android:id/list"
     android:layout_width="match_parent"
