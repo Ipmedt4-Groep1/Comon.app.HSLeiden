@@ -1,95 +1,236 @@
 package hsleiden.app.comon;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import com.example.comonnavigation.R;
 
-import android.app.Activity;
-import android.content.Context;
+import android.app.AlertDialog;
+import android.app.ListActivity;
+import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.ImageButton;
-import android.widget.RadioButton;
+import android.view.Window;
+import android.widget.AdapterView;
+import android.widget.ListAdapter;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
-public class Stemmen extends Activity
-{
-	ImageButton stembutton;
+public class Stemmen extends ListActivity {
+	
+	// Progress Dialog
+    private ProgressDialog pDialog;
+ 
+    // Creating JSON Parser object
+    JSONParser jParser = new JSONParser();
+    
+    ArrayList<HashMap<String, String>> studentenbedrijfjesList;
+    
+    // url to get all products list
+    private static String url_all_studentenbedrijfjes = "http://www.jellescheer.nl/get_all_studentenbedrijfjes.php";
+    
+	private static String url_update_stemmen = "http://jellescheer.nl/update_stemmen.php";
+
+    // JSON Node names
+    private static final String TAG_SUCCESS = "success";
+    private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
+    private static final String TAG_PID = "pid";
+    private static final String TAG_NAAM = "naam";
+    private static final String TAG_LOGO = "logo";
+	private static final String TAG_STEMMEN = "stemmen";
+
+    // products JSONArray
+    JSONArray studentenbedrijfjes = null; 
 	
 	@Override
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.stemmen_layout);
-		getSelected();
-		buttonListener();
-	}
+		
+        // Hashmap for ListView
+		studentenbedrijfjesList = new ArrayList<HashMap<String, String>>();
+        
+        // Loading products in Background Thread
+        new LoadAllStudentenbedrijfjes().execute();
+
+        // Get listview
+        ListView lv = getListView();
+        
+        // on seleting single product
+        // launching Edit Product Screen
+        lv.setOnItemClickListener(new OnItemClickListener() {
+        	 
+            @Override
+            public void onItemClick(AdapterView<?> parent, final View view, int position, long id) 
+            {
+            	
+            	new AlertDialog.Builder( Stemmen.this )
+                        .setTitle( "Bevestiging" )
+                        .setMessage( "Weet u zeker dat u op dit studentenbedrijfje wilt stemmen?" )
+                        .setPositiveButton( "Ja", new DialogInterface.OnClickListener() 
+                        {
+							public void onClick(DialogInterface dialog, int which) 
+                            {
+                                Log.d( "AlertDialog", "Positive" );
+                                
+                                 new AlertDialog.Builder( Stemmen.this )
+                                .setTitle( "Stem bevestigd" )
+                                .setMessage( "Uw stem is verwerkt. Bedankt voor het stemmen. " )
+                                .setNeutralButton( "Ok", new DialogInterface.OnClickListener() 
+                                {
+                                    public void onClick(DialogInterface dialog, int which) 
+                                    {
+                                        Log.d( "AlertDialog", "Positive" );
+                                    }
+                                })
+                                .show();
+                            }
+                        })
+                        .setNegativeButton( "Nee", new DialogInterface.OnClickListener() 
+                        {
+                            public void onClick(DialogInterface dialog, int which) 
+                            {
+                                Log.d( "AlertDialog", "Negative" );
+                            }
+                        })
+                        .show();
+                    
+               
+            	
+            	
+            	
+/*//                 getting values from selected ListItem
+                 String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+                 
+                 Intent in = new Intent(getApplicationContext(),
+                         DetailDeelnemers.class);
+                 
+                 // sending pid to next activity
+                 in.putExtra(TAG_PID, pid);
+  
+                 // starting new activity and expecting some response back
+                 startActivityForResult(in, 100);*/
+
+            } });
+ 
+    }
 	
-	public void getSelected()
-	{
-		RadioButton button1 = (RadioButton) this.findViewById(R.id.radioButton1);
-		if(button1.isChecked()) {}
-		
-		RadioButton button2 = (RadioButton) this.findViewById(R.id.RadioButton01);
-		if(button1.isChecked()) {}
-
-		RadioButton button3 = (RadioButton) this.findViewById(R.id.RadioButton02);
-		if(button1.isChecked()) {}
-
-		RadioButton button4 = (RadioButton) this.findViewById(R.id.RadioButton03);
-		if(button1.isChecked()) {}
-
-		RadioButton button5 = (RadioButton) this.findViewById(R.id.RadioButton04);
-		if(button1.isChecked()) {}
-		
-		RadioButton button6 = (RadioButton) this.findViewById(R.id.RadioButton05);
-		if(button1.isChecked()) {}
-		
-		RadioButton button7 = (RadioButton) this.findViewById(R.id.RadioButton06);
-		if(button1.isChecked()) {}
-
-		RadioButton button8 = (RadioButton) this.findViewById(R.id.RadioButton07);
-		if(button1.isChecked()) {}
-
-		RadioButton button9 = (RadioButton) this.findViewById(R.id.RadioButton08);
-		if(button1.isChecked()) {}
-
-		RadioButton button10 = (RadioButton) this.findViewById(R.id.RadioButton09);
-		if(button1.isChecked()) {}
-		
-		RadioButton button11 = (RadioButton) this.findViewById(R.id.RadioButton10);
-		if(button1.isChecked()) {}
-		
-		RadioButton button12 = (RadioButton) this.findViewById(R.id.RadioButton11);
-		if(button1.isChecked()) {}
-
-		RadioButton button13 = (RadioButton) this.findViewById(R.id.RadioButton12);
-		if(button1.isChecked()) {}
-
-		RadioButton button14 = (RadioButton) this.findViewById(R.id.RadioButton13);
-		if(button1.isChecked()) {}
-
-		RadioButton button15 = (RadioButton) this.findViewById(R.id.RadioButton14);
-		if(button1.isChecked()) {}
-		
-		RadioButton button16 = (RadioButton) this.findViewById(R.id.RadioButton15);
-		if(button1.isChecked()) {}
-
-		RadioButton button17 = (RadioButton) this.findViewById(R.id.RadioButton01);
-		if(button1.isChecked()) {}
-	}
+    // Response from Edit Product Activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // if result code 100
+        if (resultCode == 100) {
+            // if result code 100 is received
+            // means user edited/deleted product
+            // reload this screen again
+            Intent intent = getIntent();
+            finish();
+            startActivity(intent);
+        }
+ 
+    }
 	
-	public void buttonListener()
+	class LoadAllStudentenbedrijfjes extends AsyncTask<String, String, String>
 	{
-		final Context context = this;
-		stembutton = (ImageButton) findViewById(R.id.stembutton);
-		stembutton.setOnClickListener(new OnClickListener()
+		@Override
+		protected void onPreExecute()
 		{
-			@Override
-			public void onClick(View arg0) 
-			{
-				
-			}
-		});
-	}
+			super.onPreExecute();
+            pDialog = new ProgressDialog(Stemmen.this);
+            pDialog.setMessage("Loading stemopties. Please wait...");
+            pDialog.setIndeterminate(false);
+            pDialog.setCancelable(false);
+            pDialog.show();
+		}
+		
+		protected String doInBackground(String... args) {
+            // Building Parameters
+            List<NameValuePair> params = new ArrayList<NameValuePair>();
+            // getting JSON string from URL
+            JSONObject json = jParser.makeHttpRequest(url_all_studentenbedrijfjes, "GET", params);
+ 
+            // Check your log cat for JSON reponse
+            Log.d("All Opdrachtgevers: ", json.toString());
+ 
+            try {
+                // Checking for SUCCESS TAG
+                int success = json.getInt(TAG_SUCCESS);
+ 
+                if (success == 1) {
+                    // products found
+                    // Getting Array of Products
+                    studentenbedrijfjes = json.getJSONArray(TAG_STUDENTENBEDRIJFJES);
+ 
+                    // looping through All Products
+                    for (int i = 0; i < studentenbedrijfjes.length(); i++) {
+                        JSONObject c = studentenbedrijfjes.getJSONObject(i);
+ 
+                        // Storing each json item in variable
+                        String id = c.getString(TAG_PID);
+                        String naam = c.getString(TAG_NAAM);
+                        String logo = c.getString(TAG_LOGO);
+ 
+                        // creating new HashMap
+                        HashMap<String, String> map = new HashMap<String, String>();
+ 
+                        // adding each child node to HashMap key => value
+                        map.put(TAG_PID, id);
+                        map.put(TAG_NAAM, naam);
+                        map.put(TAG_LOGO, logo);
+ 
+                        // adding HashList to ArrayList
+                        studentenbedrijfjesList.add(map);
+                    }
+                }}
+                    
+            catch (JSONException e) {
+                e.printStackTrace();
+            }
+ 
+            return null;
+        }
+ 
+		 /**
+         * After completing background task Dismiss the progress dialog
+         * **/
+        protected void onPostExecute(String file_url) {
+            // dismiss the dialog after getting all products
+            pDialog.dismiss();
+            // updating UI from Background Thread
+            runOnUiThread(new Runnable() {
+                public void run() {
+                    /**
+                     * Updating parsed JSON data into ListView
+                     * */
+                    ListAdapter adapter = new SimpleAdapter(
+                            Stemmen.this, studentenbedrijfjesList,
+                            R.layout.list_stemmen_layout, new String[] {TAG_PID,
+                                    TAG_NAAM, TAG_LOGO},
+                            new int[] { R.id.pid, R.id.naam, R.id.logo });
+                    // updating listview
+                    setListAdapter(adapter);
+                }
+            });
+ 
+        }
+ 
+    }
+	
 	
 }

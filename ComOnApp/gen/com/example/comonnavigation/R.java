@@ -60,25 +60,9 @@ public final class R {
         public static final int twiiter=0x7f020024;
     }
     public static final class id {
-        public static final int RadioButton01=0x7f08003a;
-        public static final int RadioButton02=0x7f08002d;
-        public static final int RadioButton03=0x7f08002e;
-        public static final int RadioButton04=0x7f080039;
-        public static final int RadioButton05=0x7f080034;
-        public static final int RadioButton06=0x7f08003b;
-        public static final int RadioButton07=0x7f08003c;
-        public static final int RadioButton08=0x7f080032;
-        public static final int RadioButton09=0x7f08002f;
-        public static final int RadioButton10=0x7f080033;
-        public static final int RadioButton11=0x7f080035;
-        public static final int RadioButton12=0x7f080030;
-        public static final int RadioButton13=0x7f080031;
-        public static final int RadioButton14=0x7f080037;
-        public static final int RadioButton15=0x7f080036;
-        public static final int RadioButton16=0x7f08003d;
         public static final int RelativeLayout1=0x7f080000;
         public static final int Spacebreaker=0x7f080012;
-        public static final int action_settings=0x7f08003f;
+        public static final int action_settings=0x7f08002d;
         public static final int avatar=0x7f080026;
         public static final int date=0x7f080017;
         public static final int date_icon=0x7f080018;
@@ -113,9 +97,7 @@ public final class R {
         public static final int pid=0x7f080023;
         public static final int previous=0x7f08000e;
         public static final int progressBar1=0x7f08002a;
-        public static final int radioButton1=0x7f080038;
         public static final int stemButton=0x7f08000b;
-        public static final int stembutton=0x7f08003e;
         public static final int tableRow1=0x7f080003;
         public static final int tableRow2=0x7f080006;
         public static final int tableRow3=0x7f080009;
@@ -137,12 +119,13 @@ public final class R {
         public static final int list_deelnemers_layout=0x7f030008;
         public static final int list_nieuws_layout=0x7f030009;
         public static final int list_opdrachtgevers_layout=0x7f03000a;
-        public static final int main_activity=0x7f03000b;
-        public static final int nieuws_layout=0x7f03000c;
-        public static final int opdrachtgever_detail_layout=0x7f03000d;
-        public static final int opdrachtgevers_layout=0x7f03000e;
-        public static final int stemmen_layout=0x7f03000f;
-        public static final int twit_list=0x7f030010;
+        public static final int list_stemmen_layout=0x7f03000b;
+        public static final int main_activity=0x7f03000c;
+        public static final int nieuws_layout=0x7f03000d;
+        public static final int opdrachtgever_detail_layout=0x7f03000e;
+        public static final int opdrachtgevers_layout=0x7f03000f;
+        public static final int stemmen_layout=0x7f030010;
+        public static final int twit_list=0x7f030011;
     }
     public static final class menu {
         public static final int main=0x7f070000;
