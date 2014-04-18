@@ -9,10 +9,12 @@ android:layout_height="match_parent" >
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
             android:background="@null"
-            android:layout_marginTop="5dp"
             android:src="@drawable/menu_nieuws" 
-            android:scaleType="fitCenter" android:adjustViewBounds="true"
+            android:scaleType="fitCenter" 
+            android:adjustViewBounds="true"
              />
  <ImageView
             android:id="@+id/imageView3"

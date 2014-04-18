@@ -90,7 +90,7 @@ public class DetailDeelnemers extends Activity {
         protected void onPreExecute() {
             super.onPreExecute();
             pDialog = new ProgressDialog(DetailDeelnemers.this);
-            pDialog.setMessage("Loading product details. Please wait...");
+            pDialog.setMessage("Loading Deelnemer, Please wait...");
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(true);
             pDialog.show();

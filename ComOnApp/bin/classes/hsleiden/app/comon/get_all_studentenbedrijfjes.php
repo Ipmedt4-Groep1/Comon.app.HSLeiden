@@ -27,7 +27,6 @@ if (mysql_num_rows($result) > 0) {
         $studentenbedrijfjes = array();
 		$studentenbedrijfjes ["pid"] = $row["pid"];
         $studentenbedrijfjes ["naam"] = $row["naam"];
-		$studentenbedrijfjes ["logo"] = $row["logo"];
 		$studentenbedrijfjes ["studentenbedrijfjes"] = $row["studentenbedrijfjes"];
         		
      

@@ -44,8 +44,7 @@ public class Deelnemers extends ListActivity {
     private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
     private static final String TAG_PID = "pid";
     private static final String TAG_NAAM = "naam";
-    private static final String TAG_LOGO = "logo";
-    
+        
     // products JSONArray
     JSONArray studentenbedrijfjes = null; 
 	
@@ -142,7 +141,7 @@ public class Deelnemers extends ListActivity {
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
                         String naam = c.getString(TAG_NAAM);
-                        String logo = c.getString(TAG_LOGO);
+                        
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
@@ -150,7 +149,7 @@ public class Deelnemers extends ListActivity {
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
                         map.put(TAG_NAAM, naam);
-                        map.put(TAG_LOGO, logo);
+                        
  
                         // adding HashList to ArrayList
                         studentenbedrijfjesList.add(map);
@@ -179,8 +178,8 @@ public class Deelnemers extends ListActivity {
                     ListAdapter adapter = new SimpleAdapter(
                             Deelnemers.this, studentenbedrijfjesList,
                             R.layout.list_deelnemers_layout, new String[] {TAG_PID,
-                                    TAG_NAAM, TAG_LOGO},
-                            new int[] { R.id.pid, R.id.naam, R.id.logo });
+                                    TAG_NAAM},
+                            new int[] { R.id.pid, R.id.naam });
                     // updating listview
                     setListAdapter(adapter);
                 }
