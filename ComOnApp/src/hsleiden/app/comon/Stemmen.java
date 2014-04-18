@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -26,7 +25,6 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
-import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class Stemmen extends ListActivity {
@@ -42,15 +40,11 @@ public class Stemmen extends ListActivity {
     // url to get all products list
     private static String url_all_studentenbedrijfjes = "http://www.jellescheer.nl/get_all_studentenbedrijfjes.php";
     
-	private static String url_update_stemmen = "http://jellescheer.nl/update_stemmen.php";
-
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
     private static final String TAG_PID = "pid";
     private static final String TAG_NAAM = "naam";
-    private static final String TAG_LOGO = "logo";
-	private static final String TAG_STEMMEN = "stemmen";
 
     // products JSONArray
     JSONArray studentenbedrijfjes = null; 
@@ -109,24 +103,7 @@ public class Stemmen extends ListActivity {
                             }
                         })
                         .show();
-                    
-               
-            	
-            	
-            	
-/*//                 getting values from selected ListItem
-                 String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-                 
-                 Intent in = new Intent(getApplicationContext(),
-                         DetailDeelnemers.class);
-                 
-                 // sending pid to next activity
-                 in.putExtra(TAG_PID, pid);
-  
-                 // starting new activity and expecting some response back
-                 startActivityForResult(in, 100);*/
-
-            } });
+                } });
  
     }
 	
@@ -184,7 +161,6 @@ public class Stemmen extends ListActivity {
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
                         String naam = c.getString(TAG_NAAM);
-                        String logo = c.getString(TAG_LOGO);
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
@@ -192,7 +168,6 @@ public class Stemmen extends ListActivity {
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
                         map.put(TAG_NAAM, naam);
-                        map.put(TAG_LOGO, logo);
  
                         // adding HashList to ArrayList
                         studentenbedrijfjesList.add(map);
@@ -221,8 +196,8 @@ public class Stemmen extends ListActivity {
                     ListAdapter adapter = new SimpleAdapter(
                             Stemmen.this, studentenbedrijfjesList,
                             R.layout.list_stemmen_layout, new String[] {TAG_PID,
-                                    TAG_NAAM, TAG_LOGO},
-                            new int[] { R.id.pid, R.id.naam, R.id.logo });
+                                    TAG_NAAM},
+                            new int[] { R.id.pid, R.id.naam});
                     // updating listview
                     setListAdapter(adapter);
                 }
