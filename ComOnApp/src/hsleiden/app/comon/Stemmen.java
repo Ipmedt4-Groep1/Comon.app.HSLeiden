@@ -11,10 +11,8 @@ import org.json.JSONObject;
 
 import com.example.comonnavigation.R;
 
-import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.app.ProgressDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,6 +23,7 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class Stemmen extends ListActivity {
@@ -73,38 +72,19 @@ public class Stemmen extends ListActivity {
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) 
             {
             	
-            	new AlertDialog.Builder( Stemmen.this )
-                        .setTitle( "Bevestiging" )
-                        .setMessage( "Weet u zeker dat u op dit studentenbedrijfje wilt stemmen?" )
-                        .setPositiveButton( "Ja", new DialogInterface.OnClickListener() 
-                        {
-							public void onClick(DialogInterface dialog, int which) 
-                            {
-                                Log.d( "AlertDialog", "Positive" );
-                                
-                                 new AlertDialog.Builder( Stemmen.this )
-                                .setTitle( "Stem bevestigd" )
-                                .setMessage( "Uw stem is verwerkt. Bedankt voor het stemmen. " )
-                                .setNeutralButton( "Ok", new DialogInterface.OnClickListener() 
-                                {
-                                    public void onClick(DialogInterface dialog, int which) 
-                                    {
-                                        Log.d( "AlertDialog", "Positive" );
-                                    }
-                                })
-                                .show();
-                            }
-                        })
-                        .setNegativeButton( "Nee", new DialogInterface.OnClickListener() 
-                        {
-                            public void onClick(DialogInterface dialog, int which) 
-                            {
-                                Log.d( "AlertDialog", "Negative" );
-                            }
-                        })
-                        .show();
-                } });
+               // getting values from selected ListItem
+                String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+                
+                Intent in = new Intent(getApplicationContext(), StemBevestiging.class);
+                
+                // sending pid to next activity
+                in.putExtra(TAG_PID, pid);
  
+                // starting new activity and expecting some response back
+                startActivityForResult(in, 100);
+                        
+            } 
+            });
     }
 	
     // Response from Edit Product Activity
@@ -119,6 +99,8 @@ public class Stemmen extends ListActivity {
             Intent intent = getIntent();
             finish();
             startActivity(intent);
+            
+            
         }
  
     }

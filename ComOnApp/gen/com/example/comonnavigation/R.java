@@ -62,8 +62,10 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout1=0x7f080000;
         public static final int Spacebreaker=0x7f080012;
-        public static final int action_settings=0x7f080033;
+        public static final int aantalstemmen=0x7f080034;
+        public static final int action_settings=0x7f080035;
         public static final int avatar=0x7f08002c;
+        public static final int bevestigButton=0x7f080033;
         public static final int date=0x7f080017;
         public static final int date_icon=0x7f080018;
         public static final int deelnemerButton=0x7f080008;
@@ -130,8 +132,9 @@ public final class R {
         public static final int nieuws_layout=0x7f03000d;
         public static final int opdrachtgever_detail_layout=0x7f03000e;
         public static final int opdrachtgevers_layout=0x7f03000f;
-        public static final int stemmen_layout=0x7f030010;
-        public static final int twit_list=0x7f030011;
+        public static final int stem_bevestiging_layout=0x7f030010;
+        public static final int stemmen_layout=0x7f030011;
+        public static final int twit_list=0x7f030012;
     }
     public static final class menu {
         public static final int main=0x7f070000;

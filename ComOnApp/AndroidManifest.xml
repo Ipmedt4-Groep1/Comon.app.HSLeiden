@@ -70,6 +70,10 @@
             android:name="hsleiden.app.comon.D"
            	android:screenOrientation="portrait">            
         </activity>
+        <activity
+            android:name="hsleiden.app.comon.StemBevestiging"
+           	android:screenOrientation="portrait">            
+        </activity>           
     </application>
 
 </manifest>

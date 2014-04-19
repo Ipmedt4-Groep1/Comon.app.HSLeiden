@@ -17,7 +17,7 @@ public class Main extends Activity {
 	ImageButton opdrachtgeverButton;
 	ImageButton deelnemerButton;
 	ImageButton kalenderButton;
-	ImageButton stemButton;
+	static ImageButton stemButton;
 	ImageButton infoButton;
 	ImageButton nieuwsButton;
 	
