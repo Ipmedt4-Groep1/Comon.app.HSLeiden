@@ -19,8 +19,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -48,7 +50,8 @@ public class Opdrachtgevers extends ListActivity {
     private static final String TAG_NAAM = "naam";
     private static final String TAG_LOGO = "logo";
     
- 
+    ImageButton opdrachtgeverMenu;
+    
     // products JSONArray
     JSONArray opdrachtgevers = null;
  
@@ -57,6 +60,7 @@ public class Opdrachtgevers extends ListActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.opdrachtgevers_layout);
+        buttonListener();
  
         // Hashmap for ListView
         opdrachtgeversList = new ArrayList<HashMap<String, String>>();
@@ -89,6 +93,20 @@ public class Opdrachtgevers extends ListActivity {
             } });
  
     }
+    
+    private void buttonListener() 
+    {
+	    opdrachtgeverMenu = (ImageButton) findViewById(R.id.imageButton1);
+	    opdrachtgeverMenu.setOnClickListener(new OnClickListener() 
+		{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent); 
+			}		
+		});	
+	}
  
     // Response from Edit Product Activity
     @Override

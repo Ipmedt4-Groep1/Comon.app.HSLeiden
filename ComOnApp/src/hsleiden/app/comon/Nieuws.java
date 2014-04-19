@@ -2,14 +2,18 @@ package hsleiden.app.comon;
 
 import android.app.ListActivity;
 import android.content.Context;
+import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Base64;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 
 import com.example.comonnavigation.R;
 import com.google.gson.Gson;
@@ -31,6 +35,8 @@ import java.net.URLEncoder;
  */
 public class Nieuws extends ListActivity {
 
+	ImageButton nieuwsMenu;
+	
 	private ListActivity activity;
 	final static String ScreenName = "hsleidenipmedt4";
 	final static String LOG_TAG = "rnc";
@@ -41,9 +47,24 @@ public class Nieuws extends ListActivity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		activity = this;
 		setContentView(R.layout.nieuws_layout);
+		buttonListener();
 
 		downloadTweets();
 	}
+	
+	   private void buttonListener() 
+	    {
+		    nieuwsMenu = (ImageButton) findViewById(R.id.imageView1);
+		    nieuwsMenu.setOnClickListener(new OnClickListener() 
+			{
+				@Override
+				public void onClick(View arg0) 
+				{
+					Intent intent = new Intent(getApplicationContext(), Main.class);
+	                startActivity(intent); 
+				}		
+			});	
+		}
 
 	// download twitter timeline after first checking to see if there is a network connection
 	public void downloadTweets() {

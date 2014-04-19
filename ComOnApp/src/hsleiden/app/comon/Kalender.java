@@ -1,7 +1,5 @@
 package hsleiden.app.comon;
 
-import hsleiden.app.comon.Deelnemers.LoadAllStudentenbedrijfjes;
-
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -11,8 +9,7 @@ import java.util.Locale;
 import com.example.comonnavigation.R;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
-import android.os.AsyncTask;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -20,12 +17,15 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Kalender extends Activity {
 
+	ImageButton kalenderMenu;
+	
 	public GregorianCalendar month, itemmonth;// calendar instances.
 
 	public CalendarAdapter adapter;// adapter instance
@@ -43,6 +43,7 @@ public class Kalender extends Activity {
 		 Locale.setDefault( Locale.US );
 		month = (GregorianCalendar) GregorianCalendar.getInstance();
 		itemmonth = (GregorianCalendar) month.clone();
+		buttonListener();
 
 		items = new ArrayList<String>();
 		adapter = new CalendarAdapter(this, month);
@@ -283,5 +284,19 @@ public class Kalender extends Activity {
 		}
 		
 	System.out.println(gelezenArray);
+	}
+	
+    private void buttonListener() 
+    {
+    	kalenderMenu = (ImageButton) findViewById(R.id.imageButton1);
+		kalenderMenu.setOnClickListener(new OnClickListener() 
+		{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent); 
+			}		
+		});	
 	}
 }

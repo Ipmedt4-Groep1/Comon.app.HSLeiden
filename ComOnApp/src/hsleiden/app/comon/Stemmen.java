@@ -19,7 +19,9 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -27,6 +29,8 @@ import android.widget.TextView;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class Stemmen extends ListActivity {
+	
+	ImageButton stemMenu;
 	
 	// Progress Dialog
     private ProgressDialog pDialog;
@@ -54,6 +58,7 @@ public class Stemmen extends ListActivity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.stemmen_layout);
+		buttonListener();
 		
         // Hashmap for ListView
 		studentenbedrijfjesList = new ArrayList<HashMap<String, String>>();
@@ -87,7 +92,21 @@ public class Stemmen extends ListActivity {
             });
     }
 	
-    // Response from Edit Product Activity
+    private void buttonListener() 
+    {
+    	stemMenu = (ImageButton) findViewById(R.id.imageButton1);
+		stemMenu.setOnClickListener(new OnClickListener() 
+		{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Intent intent = new Intent(getApplicationContext(), Main.class);
+                startActivity(intent); 
+			}		
+		});	
+	}
+
+	// Response from Edit Product Activity
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -96,13 +115,10 @@ public class Stemmen extends ListActivity {
             // if result code 100 is received
             // means user edited/deleted product
             // reload this screen again
-            Intent intent = getIntent();
-            finish();
+            Intent intent = new Intent(getApplicationContext(), Main.class);
+           // finish();
             startActivity(intent);
-            
-            
         }
- 
     }
 	
 	class LoadAllStudentenbedrijfjes extends AsyncTask<String, String, String>

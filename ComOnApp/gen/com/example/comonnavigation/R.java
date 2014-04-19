@@ -66,8 +66,8 @@ public final class R {
         public static final int action_settings=0x7f080035;
         public static final int avatar=0x7f08002c;
         public static final int bevestigButton=0x7f080033;
-        public static final int date=0x7f080017;
-        public static final int date_icon=0x7f080018;
+        public static final int date=0x7f080018;
+        public static final int date_icon=0x7f080019;
         public static final int deelnemerButton=0x7f080008;
         public static final int evenementDatum=0x7f080014;
         public static final int evenementLocatie=0x7f080016;
@@ -75,7 +75,7 @@ public final class R {
         public static final int evenementTitel=0x7f080013;
         public static final int gridview=0x7f080011;
         public static final int header=0x7f08000d;
-        public static final int imageButton1=0x7f080019;
+        public static final int imageButton1=0x7f080017;
         public static final int imageView1=0x7f080002;
         public static final int imageView2=0x7f080001;
         public static final int imageView3=0x7f08000c;
