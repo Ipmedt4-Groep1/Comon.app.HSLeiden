@@ -157,6 +157,7 @@ public class StemBevestiging extends Activity {
                             txtOpdrachtgever.setText(product.getString(TAG_OPDRACHTGEVER));
                             txtDeelnemers.setText(product.getString(TAG_DEELNEMERS));
                             txtStemmen.setText(product.getString(TAG_STEMMEN));
+                            txtStemmen.setKeyListener(null);
                         }else{
                             // product with pid not found
                         }
