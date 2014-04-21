@@ -19,7 +19,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
@@ -46,14 +48,16 @@ public class DetailOpdrachtgevers extends Activity {
     private static final String TAG_NAAM = "naam";
     private static final String TAG_BESCHRIJVING = "beschrijving";
     private static final String TAG_WEBSITE = "website";
+    private static final String TAG_LOGO_FULL = "logo_full";
  
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	@SuppressLint("NewApi")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.detail_opdrachtgevers);
-     
+        
          // getting product details from intent
         Intent i = getIntent();
  
@@ -133,6 +137,15 @@ public class DetailOpdrachtgevers extends Activity {
                             txtNaam.setText(product.getString(TAG_NAAM));
                             txtBeschrijving.setText(product.getString(TAG_BESCHRIJVING));
                             txtWebsite.setText(product.getString(TAG_WEBSITE));
+                            
+                            
+                         // Afbeelding weergeven
+                            int loader = R.drawable.loader; 
+                            String imageURL = product.getString(TAG_LOGO_FULL);
+                            
+                            ImageView imagePhoto = (ImageView) findViewById(R.id.logo);    
+                            ImageLoader imgLoader = new ImageLoader(getApplicationContext());        
+                            imgLoader.DisplayImage(imageURL, loader, imagePhoto);
                         }else{
                             // product with pid not found
                         }

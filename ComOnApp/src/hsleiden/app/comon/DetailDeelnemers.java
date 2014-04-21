@@ -19,6 +19,8 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.Window;
+import android.widget.ImageView;
 import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
@@ -31,7 +33,9 @@ public class DetailDeelnemers extends Activity {
     TextView txtSoort;
     TextView txtDeelnemers;
     TextView txtOpdrachtgever;
-    String pid;
+    ImageView txtLogo;
+     String pid;
+     
  
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -53,14 +57,16 @@ public class DetailDeelnemers extends Activity {
     private static final String TAG_WEBSITE = "website";
     private static final String TAG_SOORT = "soort";
     private static final String TAG_LIKES = "likes";
+    private static final String TAG_LOGO_FULL = "logo_full";
  
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	@SuppressLint("NewApi")
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.detail_deelnemers);
-     
+        
          // getting product details from intent
         Intent i = getIntent();
  
@@ -70,6 +76,9 @@ public class DetailDeelnemers extends Activity {
         // Getting complete product details in background thread
         new GetProductDetails().execute();
         
+       
+        
+           
         if (android.os.Build.VERSION.SDK_INT > 8) 
         {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
@@ -148,6 +157,17 @@ public class DetailDeelnemers extends Activity {
                             txtOpdrachtgever.setText(product.getString(TAG_OPDRACHTGEVER));
                             txtDeelnemers.setText(product.getString(TAG_DEELNEMERS));
                             txtLikes.setText(product.getString(TAG_LIKES));
+                           
+                            // Afbeelding weergeven
+                            int loader = R.drawable.loader; 
+                            String imageURL = product.getString(TAG_LOGO_FULL);
+                            
+                            ImageView imagePhoto = (ImageView) findViewById(R.id.logo);    
+                            ImageLoader imgLoader = new ImageLoader(getApplicationContext());        
+                            imgLoader.DisplayImage(imageURL, loader, imagePhoto);
+                            
+                                
+                            
                         }else{
                             // product with pid not found
                         }

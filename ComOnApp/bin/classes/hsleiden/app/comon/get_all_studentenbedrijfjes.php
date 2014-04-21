@@ -28,7 +28,7 @@ if (mysql_num_rows($result) > 0) {
 		$studentenbedrijfjes ["pid"] = $row["pid"];
         $studentenbedrijfjes ["naam"] = $row["naam"];
 		$studentenbedrijfjes ["studentenbedrijfjes"] = $row["studentenbedrijfjes"];
-        		
+        $studentenbedrijfjes ["logo_full"] = $row["logo_full"];		
      
  
         // push single product into final response array

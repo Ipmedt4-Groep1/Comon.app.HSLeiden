@@ -22,13 +22,14 @@
         android:textStyle="bold" 
         android:textColor="#98c00e"/>
     
+      <!-- logo
      <ImageView
-        android:id="@+id/tumb"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="6dip"
-        android:paddingLeft="6dip"
-         />
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+     -->
+     
+     <!-- Name Label -->
     
  
 </LinearLayout>

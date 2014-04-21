@@ -11,7 +11,15 @@
         android:layout_height="wrap_content"
         android:visibility="gone" />
  
-    <!-- Name Label -->
+    
+      <!-- logo
+     <ImageView
+        android:id="@+id/logo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"/>
+     -->
+     
+     <!-- Name Label -->
     <TextView
         android:id="@+id/naam"
         android:layout_width="fill_parent"
@@ -22,13 +30,7 @@
         android:textColor="#019fe1"
         android:textStyle="bold" />
     
-     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="6dip"
-        android:paddingLeft="6dip"
-         />
+    
     
  
 </LinearLayout>

@@ -3,10 +3,28 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="wrap_content"
     android:layout_height="match_parent" >
-
+ 
+  <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:src="@drawable/kop_details" />
+    
+    <ImageButton
+        android:id="@+id/imageButton1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@null"
+        android:src="@drawable/pijl_detail_terug_opdracht" />
+         
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:layout_marginTop="50dp"
         android:layout_above="@+id/imageView1" >
 
         <TableLayout
@@ -29,6 +47,17 @@
                     android:singleLine="true"
                     android:textColor="#98c00e"
                     android:textSize="20dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp" />
             </TableRow>
 
             <TableRow

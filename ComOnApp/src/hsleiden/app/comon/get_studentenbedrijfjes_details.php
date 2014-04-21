@@ -36,6 +36,7 @@ if (isset($_GET["pid"])) {
 			$studentenbedrijfjes["deelnemers"] = $result["deelnemers"];
 			$studentenbedrijfjes["website"] = $result["website"];
 			$studentenbedrijfjes["likes"] = $result["likes"];
+			$studentenbedrijfjes["logo_full"] = $result["logo_full"];
           
             // success
             $response["success"] = 1;
