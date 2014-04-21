@@ -51,13 +51,14 @@ public class Kalender extends Activity {
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(adapter);
 		
+		//event details when clicked upon
 		evenementTitel = (TextView) findViewById(R.id.evenementTitel);
 		evenementDatum = (TextView) findViewById(R.id.evenementDatum);
 		evenementOmschrijving = (TextView) findViewById(R.id.evenementOmschrijving);
 		evenementLocatie = (TextView) findViewById(R.id.evenementLocatie);
 
 		handler = new Handler();
-		handler.post(calendarUpdater);
+		handler.post(calendarUpdater); //update when opened
 
 		TextView title = (TextView) findViewById(R.id.title);
 		title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
@@ -89,7 +90,7 @@ public class Kalender extends Activity {
 					int position, long id) {
 
 				((CalendarAdapter) parent.getAdapter()).setSelected(v);
-				String selectedGridDate = CalendarAdapter.dayString
+				String selectedGridDate = CalendarAdapter.dayString //retrieve selected date
 						.get(position);
 				String[] separatedTime = selectedGridDate.split("-");
 				String gridvalueString = separatedTime[2].replaceFirst("^0*",
@@ -104,7 +105,7 @@ public class Kalender extends Activity {
 					refreshCalendar();
 				}
 				((CalendarAdapter) parent.getAdapter()).setSelected(v);
-				
+				//event details
 				if (selectedGridDate.equals("2014-01-01"))
 				{
 					evenementTitel.setText("Sander slaan");
@@ -228,7 +229,7 @@ public class Kalender extends Activity {
 	}
 
 	protected void showToast(String string) {
-		Toast.makeText(this, string, Toast.LENGTH_LONG).show();
+		Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
 
 	} 
 
@@ -238,6 +239,7 @@ public class Kalender extends Activity {
 		adapter.refreshDays();
 		adapter.notifyDataSetChanged();
 		handler.post(calendarUpdater); // generate some calendar items
+		showToast("Loading events");		
 
 		title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
 	}
@@ -250,6 +252,7 @@ public class Kalender extends Activity {
 
 			// Print dates of the current week
 			DateFormat df = new SimpleDateFormat("yyyy-MM-dd",Locale.US);
+			// Itemvalue gets used, ignore warning
 			String itemvalue;
 			for (int i = 0; i < 712; i++) {
 				itemvalue = df.format(itemmonth.getTime());
@@ -272,19 +275,6 @@ public class Kalender extends Activity {
 			adapter.notifyDataSetChanged();
 		}
 	};
-	
-	public void getItems()
-	{
-		
-	String gelezenArray = "";
-		
-		for (String s : items)
-		{
-			gelezenArray += s + "\t";
-		}
-		
-	System.out.println(gelezenArray);
-	}
 	
     private void buttonListener() 
     {
