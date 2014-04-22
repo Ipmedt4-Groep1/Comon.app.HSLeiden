@@ -3,7 +3,9 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="wrap_content"
     android:layout_height="match_parent" >
-<ImageView
+
+    <!-- Titel -->
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -11,6 +13,7 @@
         android:layout_marginTop="5dp"
         android:src="@drawable/kop_details" />
     
+    <!-- Terug Knop -->
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
@@ -19,11 +22,12 @@
         android:layout_marginTop="20dp"
         android:background="@null"
         android:src="@drawable/pijl_detail_terug_deel" />
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
-        android:layout_above="@+id/imageView1" >
+        android:layout_above="@+id/imageView1"
+        android:layout_marginTop="50dp" >
 
         <TableLayout
             android:layout_width="match_parent"
@@ -31,11 +35,12 @@
             android:layout_marginLeft="5dip"
             android:layout_marginRight="5dip" >
 
-           <TableRow
+            <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Naam -->
                 <TextView
                     android:id="@+id/inputNaam"
                     android:layout_width="fill_parent"
@@ -50,6 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Soort -->
                 <TextView
                     android:id="@+id/inputSoort"
                     android:layout_width="wrap_content"
@@ -64,6 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Logo Bedrijf -->
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="150dp"
@@ -75,6 +82,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Beschrijving -->
                 <TextView
                     android:id="@+id/inputBeschrijving"
                     android:layout_width="wrap_content"
@@ -91,7 +99,6 @@
                 android:layout_height="wrap_content" >
 
                 <!-- Kop opdrachtgevers -->
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -106,6 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Opdrachtgevers -->
                 <TextView
                     android:id="@+id/inputOpdrachtgever"
                     android:layout_width="wrap_content"
@@ -121,7 +129,6 @@
                 android:layout_height="wrap_content" >
 
                 <!-- Kop Deelnemers -->
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -136,6 +143,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Deelnemers -->
                 <TextView
                     android:id="@+id/inputDeelnemers"
                     android:layout_width="wrap_content"
@@ -150,6 +158,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Website -->
                 <TextView
                     android:id="@+id/inputWebsite"
                     android:layout_width="fill_parent"
@@ -165,26 +174,30 @@
                 android:layout_height="wrap_content" >
 
                 <LinearLayout>
-                <ImageButton
-                    android:id="@+id/like"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:background="@null"                    
-                    android:src="@drawable/like" />
 
-                <TextView
-                    android:id="@+id/inputLikes"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dip"
-                    android:layout_marginBottom="15dip"
-                    android:textSize="15dp" />
-                </LinearLayout>                
+                    <!-- Plaatje Likes -->
+                    <ImageButton
+                        android:id="@+id/like"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:background="@null"
+                        android:src="@drawable/like" />
+                    
+                    <!-- Tekst Likes -->
+                    <TextView
+                        android:id="@+id/inputLikes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dip"
+                        android:layout_marginBottom="15dip"
+                        android:textSize="15dp" />
+                </LinearLayout>
             </TableRow>
         </TableLayout>
     </ScrollView>
-
+    
+    <!-- Balk Onder -->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"

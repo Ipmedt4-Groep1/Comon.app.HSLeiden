@@ -5,6 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent" >
 
+    <!-- Titel -->
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="wrap_content"
@@ -13,7 +14,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
         android:src="@drawable/kop_bedrijven" />
-
+    
+    <!-- Menu Knop -->
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
@@ -29,6 +31,7 @@
         android:layout_alignParentLeft="true"
         android:orientation="vertical" >
 
+        <!-- Listview -->
         <ListView
             android:id="@android:id/list"
             android:layout_width="fill_parent"
@@ -38,7 +41,8 @@
             android:paddingBottom="20dp" >
         </ListView>
     </LinearLayout>
-
+    
+    <!-- Balk Onder -->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"

@@ -29,7 +29,7 @@ public class Kalender extends Activity {
 	
 	public GregorianCalendar month, itemmonth;// calendar instances.
 
-	public CalendarAdapter adapter;// adapter instance
+	public KalenderAdapter adapter;// adapter instance
 	public Handler handler;// for grabbing some event values for showing the dot
 							// marker.
 	public ArrayList<String> items; // container to store calendar items which
@@ -40,14 +40,14 @@ public class Kalender extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.calendar);
+		setContentView(R.layout.kalender_layout);
 		 Locale.setDefault( Locale.US );
 		month = (GregorianCalendar) GregorianCalendar.getInstance();
 		itemmonth = (GregorianCalendar) month.clone();
 		buttonListener();
 
 		items = new ArrayList<String>();
-		adapter = new CalendarAdapter(this, month);
+		adapter = new KalenderAdapter(this, month);
 		
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(adapter);
@@ -90,8 +90,8 @@ public class Kalender extends Activity {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
 
-				((CalendarAdapter) parent.getAdapter()).setSelected(v);
-				String selectedGridDate = CalendarAdapter.dayString //retrieve selected date
+				((KalenderAdapter) parent.getAdapter()).setSelected(v);
+				String selectedGridDate = KalenderAdapter.dayString //retrieve selected date
 						.get(position);
 				String[] separatedTime = selectedGridDate.split("-");
 				String gridvalueString = separatedTime[2].replaceFirst("^0*",
@@ -105,7 +105,7 @@ public class Kalender extends Activity {
 					setNextMonth();
 					refreshCalendar();
 				}
-				((CalendarAdapter) parent.getAdapter()).setSelected(v);
+				((KalenderAdapter) parent.getAdapter()).setSelected(v);
 				//event details
 				if (selectedGridDate.equals("2014-01-01"))
 				{

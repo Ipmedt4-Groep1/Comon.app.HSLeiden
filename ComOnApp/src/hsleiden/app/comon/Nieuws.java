@@ -36,7 +36,7 @@ import java.net.URLEncoder;
 public class Nieuws extends ListActivity {
 
 	ImageButton nieuwsMenu;
-	
+
 	private ListActivity activity;
 	final static String ScreenName = "hsleidenipmedt4";
 	final static String LOG_TAG = "rnc";
@@ -51,22 +51,22 @@ public class Nieuws extends ListActivity {
 
 		downloadTweets();
 	}
-	
-	   private void buttonListener() 
-	    {
-		    nieuwsMenu = (ImageButton) findViewById(R.id.imageView1);
-		    nieuwsMenu.setOnClickListener(new OnClickListener() 
-			{
-				@Override
-				public void onClick(View arg0) 
-				{
-					Intent intent = new Intent(getApplicationContext(), Main.class);
-	                startActivity(intent); 
-				}		
-			});	
-		}
 
-	// download twitter timeline after first checking to see if there is a network connection
+	private void buttonListener() 
+	{
+		nieuwsMenu = (ImageButton) findViewById(R.id.imageView1);
+		nieuwsMenu.setOnClickListener(new OnClickListener() 
+		{
+			@Override
+			public void onClick(View arg0) 
+			{
+				Intent intent = new Intent(getApplicationContext(), Main.class);
+				startActivity(intent); 
+			}		
+		});	
+	}
+
+	// Haalt twitter berichten op na controleren of er internet verbinding is.
 	public void downloadTweets() {
 		ConnectivityManager connMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
 		NetworkInfo networkInfo = connMgr.getActiveNetworkInfo();
@@ -78,7 +78,8 @@ public class Nieuws extends ListActivity {
 		}
 	}
 
-	// Uses an AsyncTask to download a Twitter user's timeline
+	// Gebruitk AsyncTask om twitter timeline te downloaden.
+	// Vul hieronder gegevens in van twitter developer account.
 	private class DownloadTwitterTask extends AsyncTask<String, Void, String> {
 		final static String CONSUMER_KEY = "jozKk1zK0N4yvZkG5lsDnT8RF";
 		final static String CONSUMER_SECRET = "DpjBV5qb7DdR26NXZokdGmdCCyhQD0M41IVjdkJqlSxen1Bi4v";

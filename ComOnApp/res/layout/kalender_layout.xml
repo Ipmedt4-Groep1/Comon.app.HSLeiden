@@ -1,32 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-android:id="@+id/RelativeLayout1"
-android:layout_width="wrap_content"
-android:layout_height="match_parent">
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
 
- <ImageView
+    <!-- Titel -->
+    <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="5dp"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
         android:src="@drawable/kop_kalender" />
 
-<LinearLayout 
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical" >
 
-   
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calendar_top" >
+
+            <RelativeLayout
+                android:id="@+id/previous"
+                android:layout_width="40dip"
+                android:layout_height="30dip"
+                android:layout_alignParentLeft="true" >
+
+                <!-- Arrow Links -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/arrow_left" />
+            </RelativeLayout>
+            
+            <!-- Titel -->
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dip"
+                android:textColor="#FFFFFF"
+                android:textSize="18dip"
+                android:textStyle="bold" />
+
+            <RelativeLayout
+                android:id="@+id/next"
+                android:layout_width="40dip"
+                android:layout_height="30dip"
+                android:layout_alignParentRight="true" >
+
+                <!-- Arrow Rechts -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@drawable/arrow_right" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <GridView
+            android:id="@+id/gridview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="7"
+            android:stretchMode="columnWidth" />
+
+        <TextView
+            android:id="@+id/Spacebreaker"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <!-- Evenementen Titel -->
+        <TextView
+            android:id="@+id/evenementTitel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Geen evenement op deze datum"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+        <!-- Evenementen Datum -->
+        <TextView
+            android:id="@+id/evenementDatum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <!-- Evenementen Omschrijving -->
+        <TextView
+            android:id="@+id/evenementOmschrijving"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+        
+        <!-- Evenementen Locatie -->
+        <TextView
+            android:id="@+id/evenementLocatie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
     
-    <TextView
-        android:id="@+id/textView1"
+    <!-- Balk Onder -->
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/balk_afbeelding" />
+    
+    <!-- Menu Knop -->
+    <ImageButton
+        android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Op deze pagina kun je de kalender inzien" />
-
-</LinearLayout>
-
+        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@null"
+        android:src="@drawable/menu_kalender" />
 
 </RelativeLayout>

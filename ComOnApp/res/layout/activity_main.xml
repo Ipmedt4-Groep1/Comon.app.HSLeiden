@@ -1,109 +1,117 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res/com.example.comonnavigation"
-android:id="@+id/RelativeLayout1"
-android:layout_width="wrap_content"
-android:layout_height="match_parent" >
-           <ImageView
-               android:id="@+id/imageView2"
-               android:layout_width="fill_parent"
-               android:layout_height="wrap_content"
-               android:layout_alignParentBottom="true"
-               android:src="@drawable/balk_afbeelding" 
-               android:scaleType="fitCenter" 
-               android:adjustViewBounds="true" />
+    xmlns:app="http://schemas.android.com/apk/res/com.example.comonnavigation"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent" >
 
-           <LinearLayout
-               android:layout_width="match_parent"
-               android:layout_height="match_parent"
-               android:layout_alignParentLeft="true"
-               android:layout_alignParentTop="true"
-               android:gravity="center"
-               android:orientation="vertical" >
+    <!-- Balk Onder -->
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/balk_afbeelding" />
 
-               <ImageView
-                   android:id="@+id/imageView1"
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_marginBottom="50dp"
-                   android:adjustViewBounds="true"
-                   android:background="@null"
-                   android:scaleType="fitCenter"
-                   android:src="@drawable/comon" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:orientation="vertical" >
 
-               <TableLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:layout_gravity="center" >
+        <!-- Logo Comon -->
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="50dp"
+            android:adjustViewBounds="true"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/comon" />
 
-                   <TableRow
-                       android:id="@+id/tableRow1"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content" >
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center" >
 
-                       <ImageButton
-                           android:id="@+id/infoButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:background="@null"
-                           android:paddingLeft="0dp"
-                           android:src="@drawable/info" />
+            <TableRow
+                android:id="@+id/tableRow1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-                       <ImageButton
-                           android:id="@+id/nieuwsButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginLeft="10dp"
-                           android:background="@null"
-                           android:src="@drawable/nieuws" />
-                   </TableRow>
+                <!-- Info Button -->
+                <ImageButton
+                    android:id="@+id/infoButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:paddingLeft="0dp"
+                    android:src="@drawable/info" />
+                
+                <!-- Nieuws Button -->
+                <ImageButton
+                    android:id="@+id/nieuwsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:background="@null"
+                    android:src="@drawable/nieuws" />
+            </TableRow>
 
-                   <TableRow
-                       android:id="@+id/tableRow2"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content" >
+            <TableRow
+                android:id="@+id/tableRow2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-                       <ImageButton
-                           android:id="@+id/opdrachtgeverButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginTop="10dp"
-                           android:background="@null"
-                           android:src="@drawable/bedrijven" />
+                <!-- Opdrachtgever Button -->
+                <ImageButton
+                    android:id="@+id/opdrachtgeverButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:src="@drawable/bedrijven" />
+               
+				<!-- Deelnemer Button -->
+                <ImageButton
+                    android:id="@+id/deelnemerButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:src="@drawable/deelnemers" />
+            </TableRow>
 
-                       <ImageButton
-                           android:id="@+id/deelnemerButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginLeft="10dp"
-                           android:layout_marginTop="10dp"
-                           android:background="@null"
-                           android:src="@drawable/deelnemers" />
-                   </TableRow>
+            <TableRow
+                android:id="@+id/tableRow3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
 
-                   <TableRow
-                       android:id="@+id/tableRow3"
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content" >
-
-                       <ImageButton
-                           android:id="@+id/kalenderButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginTop="10dp"
-                           android:background="@null"
-                           android:src="@drawable/kalender" />
-
-                       <ImageButton
-                           android:id="@+id/stemButton"
-                           android:layout_width="wrap_content"
-                           android:layout_height="wrap_content"
-                           android:layout_marginLeft="10dp"
-                           android:layout_marginTop="10dp"
-                           android:background="@null"
-                           android:src="@drawable/stemmen" />
-                   </TableRow>
-               </TableLayout>
-           </LinearLayout>
+                <!-- Kalender Button -->
+                <ImageButton
+                    android:id="@+id/kalenderButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:src="@drawable/kalender" />
+                
+                <!-- Stem Button -->
+                <ImageButton
+                    android:id="@+id/stemButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@null"
+                    android:src="@drawable/stemmen" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
 
 </RelativeLayout>
-    

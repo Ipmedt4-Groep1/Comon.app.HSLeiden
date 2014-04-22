@@ -18,7 +18,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class CalendarAdapter extends BaseAdapter {
+public class KalenderAdapter extends BaseAdapter {
 	private Context mContext;
 
 	private java.util.Calendar month;
@@ -42,8 +42,8 @@ public class CalendarAdapter extends BaseAdapter {
 	public static List<String> dayString;
 	private View previousView;
 
-	public CalendarAdapter(Context c, GregorianCalendar monthCalendar) {
-		CalendarAdapter.dayString = new ArrayList<String>();
+	public KalenderAdapter(Context c, GregorianCalendar monthCalendar) {
+		KalenderAdapter.dayString = new ArrayList<String>();
 		 Locale.setDefault( Locale.US );
 		month = monthCalendar;
 		selectedDate = (GregorianCalendar) monthCalendar.clone();
@@ -84,7 +84,7 @@ public class CalendarAdapter extends BaseAdapter {
 									// attributes
 			LayoutInflater vi = (LayoutInflater) mContext
 					.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-			v = vi.inflate(R.layout.calendar_item, null);
+			v = vi.inflate(R.layout.item_kalender, null);
 
 		}
 		dayView = (TextView) v.findViewById(R.id.date);

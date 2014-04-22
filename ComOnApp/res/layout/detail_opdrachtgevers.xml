@@ -3,8 +3,9 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="wrap_content"
     android:layout_height="match_parent" >
- 
-  <ImageView
+
+    <!-- Titel -->
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
@@ -12,6 +13,7 @@
         android:layout_marginTop="5dp"
         android:src="@drawable/kop_details" />
     
+    <!-- Terug knop -->
     <ImageButton
         android:id="@+id/imageButton1"
         android:layout_width="wrap_content"
@@ -20,12 +22,12 @@
         android:layout_marginTop="20dp"
         android:background="@null"
         android:src="@drawable/pijl_detail_terug_opdracht" />
-         
+
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_marginTop="50dp"
-        android:layout_above="@+id/imageView1" >
+        android:layout_above="@+id/imageView1"
+        android:layout_marginTop="50dp" >
 
         <TableLayout
             android:layout_width="match_parent"
@@ -38,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Naam -->
                 <TextView
                     android:id="@+id/inputNaam"
                     android:layout_width="fill_parent"
@@ -54,6 +57,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Logo bedrijf -->
                 <ImageView
                     android:id="@+id/logo"
                     android:layout_width="150dp"
@@ -65,6 +69,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Beschrijving -->
                 <TextView
                     android:id="@+id/inputBeschrijving"
                     android:layout_width="wrap_content"
@@ -80,6 +85,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
+                <!-- Tekst Website -->
                 <TextView
                     android:id="@+id/inputWebsite"
                     android:layout_width="fill_parent"
@@ -92,7 +98,8 @@
             </TableRow>
         </TableLayout>
     </ScrollView>
-
+    
+    <!-- Balk Onder -->
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="fill_parent"

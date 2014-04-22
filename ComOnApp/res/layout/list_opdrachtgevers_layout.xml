@@ -3,33 +3,24 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical" >
- 
+
     <!-- Product id (pid) - will be HIDDEN - used to pass to other activity -->
+
     <TextView
         android:id="@+id/pid"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="gone" />
- 
+
     <!-- Name Label -->
     <TextView
         android:id="@+id/naam"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="6dip"
         android:paddingLeft="6dip"
+        android:paddingTop="6dip"
+        android:textColor="#98c00e"
         android:textSize="17dip"
-        android:textStyle="bold" 
-        android:textColor="#98c00e"/>
-    
-      <!-- logo
-     <ImageView
-        android:id="@+id/logo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"/>
-     -->
-     
-     <!-- Name Label -->
-    
- 
+        android:textStyle="bold" />
+
 </LinearLayout>
