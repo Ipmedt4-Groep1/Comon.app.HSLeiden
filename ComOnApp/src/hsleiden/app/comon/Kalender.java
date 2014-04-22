@@ -39,13 +39,16 @@ public class Kalender extends Activity {
 
 	public void onCreate(Bundle savedInstanceState) {
 		
+		//haal de kalender_layout op
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.kalender_layout);
 		 Locale.setDefault( Locale.US );
+		 //gregoriancalendar is een standaard android calendar
 		month = (GregorianCalendar) GregorianCalendar.getInstance();
 		itemmonth = (GregorianCalendar) month.clone();
 		buttonListener();
 
+		//arraylist aanmaken
 		items = new ArrayList<String>();
 		adapter = new KalenderAdapter(this, month);
 		
@@ -54,7 +57,7 @@ public class Kalender extends Activity {
 		
 		showToast("Evenementen ophalen..");		
 		
-		//details van evenementen
+		//details van de evenementen
 		evenementTitel = (TextView) findViewById(R.id.evenementTitel);
 		evenementDatum = (TextView) findViewById(R.id.evenementDatum);
 		evenementOmschrijving = (TextView) findViewById(R.id.evenementOmschrijving);
@@ -68,6 +71,7 @@ public class Kalender extends Activity {
 
 		RelativeLayout previous = (RelativeLayout) findViewById(R.id.previous);
 
+		//haal vorige maand op
 		previous.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -77,6 +81,7 @@ public class Kalender extends Activity {
 			}
 		});
 
+		//haal volgende maand op
 		RelativeLayout next = (RelativeLayout) findViewById(R.id.next);
 		next.setOnClickListener(new OnClickListener() {
 
@@ -92,14 +97,15 @@ public class Kalender extends Activity {
 			public void onItemClick(AdapterView<?> parent, View v,
 					int position, long id) {
 
+				//selecteer welke dag het vandaag is
 				((KalenderAdapter) parent.getAdapter()).setSelected(v);
-				String selectedGridDate = KalenderAdapter.dayString //retrieve selected date
+				String selectedGridDate = KalenderAdapter.dayString 
 						.get(position);
 				String[] separatedTime = selectedGridDate.split("-");
 				String gridvalueString = separatedTime[2].replaceFirst("^0*",
 						"");// taking last part of date. ie; 2 from 2012-12-02.
 				int gridvalue = Integer.parseInt(gridvalueString);
-				// navigate to next or previous month on clicking offdays.
+				//navigeer naar volgende of vorige maand wanneer er op de grijze datums wordt gedrukt (offdays)
 				if ((gridvalue > 10) && (position < 8)) {
 					setPreviousMonth();
 					refreshCalendar();
@@ -193,6 +199,7 @@ public class Kalender extends Activity {
 		});
 	}
 	
+	//verander in de volgende maand
 	protected void setNextMonth() {
 		if (month.get(GregorianCalendar.MONTH) == month
 				.getActualMaximum(GregorianCalendar.MONTH)) {
@@ -205,6 +212,7 @@ public class Kalender extends Activity {
 
 	}
 
+	//verander in de vorige maand
 	protected void setPreviousMonth() {
 		if (month.get(GregorianCalendar.MONTH) == month
 				.getActualMinimum(GregorianCalendar.MONTH)) {
@@ -217,6 +225,7 @@ public class Kalender extends Activity {
 
 	}
 
+	//laat de toast evenementen ophalen zien wanneer de kalender geladen wordt
 	protected void showToast(String string) {
 		Toast.makeText(this, string, Toast.LENGTH_SHORT).show();
 
@@ -245,6 +254,7 @@ public class Kalender extends Activity {
 			for (int i = 0; i < 712; i++) {
 				itemvalue = df.format(itemmonth.getTime());
 				itemmonth.add(GregorianCalendar.DATE, 1);
+				//datums van de evenementen
 				items.add("2014-01-01");
 				items.add("2014-02-14");
 				items.add("2014-03-30");
