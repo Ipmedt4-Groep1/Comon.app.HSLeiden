@@ -2,15 +2,15 @@ package hsleiden.app.comon;
 
 import com.google.gson.annotations.SerializedName;
 
-
+// Maakt meerdere variable aan die nodig zijn.
 public class TwitterUser {
 
 	@SerializedName("screen_name")
 	private String screenName;
-	
+
 	@SerializedName("name")
 	private String name;
-	
+
 	@SerializedName("profile_image_url")
 	private String profileImageUrl;
 

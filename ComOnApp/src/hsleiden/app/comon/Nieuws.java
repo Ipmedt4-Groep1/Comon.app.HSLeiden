@@ -14,7 +14,6 @@ import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
-
 import com.example.comonnavigation.R;
 import com.google.gson.Gson;
 import org.apache.http.HttpEntity;
@@ -26,18 +25,14 @@ import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
-
 import java.io.*;
 import java.net.URLEncoder;
 
-/**
- * Demonstrates how to use a twitter application keys to access a user's timeline
- */
 public class Nieuws extends ListActivity {
 
 	ImageButton nieuwsMenu;
-
 	private ListActivity activity;
+	//pas deze naam aan naar het twitter account username
 	final static String ScreenName = "hsleidenipmedt4";
 	final static String LOG_TAG = "rnc";
 

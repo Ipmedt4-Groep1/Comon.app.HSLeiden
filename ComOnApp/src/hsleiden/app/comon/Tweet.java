@@ -2,6 +2,7 @@ package hsleiden.app.comon;
 
 import com.google.gson.annotations.SerializedName;
 
+// Maakt maakt meerdere variable aan die nodig zijn
 public class Tweet {
 
 	@SerializedName("created_at")
@@ -28,7 +29,7 @@ public class Tweet {
 	public String getDateCreated() {
 		return DateCreated;
 	}
-	
+
 	public String getId() {
 		return Id;
 	}
@@ -60,15 +61,15 @@ public class Tweet {
 	public void setInReplyToScreenName(String inReplyToScreenName) {
 		InReplyToScreenName = inReplyToScreenName;
 	}
-	
+
 	public void setInReplyToStatusId(String inReplyToStatusId) {
 		InReplyToStatusId = inReplyToStatusId;
 	}
-	
+
 	public void setInReplyToUserId(String inReplyToUserId) {
 		InReplyToUserId = inReplyToUserId;
 	}
-	
+
 	public void setText(String text) {
 		Text = text;
 	}
