@@ -117,6 +117,8 @@ public class Stemmen extends ListActivity {
             // reload this screen again
             Intent intent = new Intent(getApplicationContext(), Main.class);
            // finish();
+            Main.stemId = 1;
+            Main.stem = StemBevestiging.stemNaam;
             startActivity(intent);
         }
     }

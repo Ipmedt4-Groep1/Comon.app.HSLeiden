@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class Main extends Activity {
 	
@@ -20,6 +21,9 @@ public class Main extends Activity {
 	static ImageButton stemButton;
 	ImageButton infoButton;
 	ImageButton nieuwsButton;
+	
+	static int stemId = 0;
+	static String stem;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -98,9 +102,26 @@ public class Main extends Activity {
 			@Override
 			public void onClick(View arg0) 
 			{
-				Intent intent = new Intent(context, Stemmen.class);
-                startActivity(intent); 
+				if (stemId == 0)
+				{
+					Intent intent = new Intent(context, Stemmen.class);
+	                startActivity(intent);
+	            }
+				else
+				{
+					Toast.makeText(getApplicationContext(), "U heeft al gestemd op " + stem + "." + "\n" + "U kunt niet meer stemmen", Toast.LENGTH_LONG).show();
+				}
 			}		
 		});	
 	}
+	
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        // if result code 100
+        if (resultCode == 100) {
+            // if result code 100 is received
+            // means user edited/deleted product
+          stemButton.setEnabled(false);
+        }
+    }
 }

@@ -19,13 +19,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
 public class DetailDeelnemers extends Activity {
 	 
+	public String aantalLikes;
+    static ImageButton likeButton;
+	
     TextView txtNaam;
     TextView txtBeschrijving;
     TextView txtWebsite;
@@ -34,9 +40,8 @@ public class DetailDeelnemers extends Activity {
     TextView txtDeelnemers;
     TextView txtOpdrachtgever;
     ImageView txtLogo;
-     String pid;
+    String pid;
      
- 
     // Progress Dialog
     private ProgressDialog pDialog;
  
@@ -46,6 +51,8 @@ public class DetailDeelnemers extends Activity {
     // single product url
     private static final String url_product_detials = "http://www.jellescheer.nl/get_studentenbedrijfjes_details.php";
  
+	private static final String url_update_likes = "http://www.jellescheer.nl/update_likes.php";
+    
     // JSON Node names
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
@@ -58,6 +65,8 @@ public class DetailDeelnemers extends Activity {
     private static final String TAG_SOORT = "soort";
     private static final String TAG_LIKES = "likes";
     private static final String TAG_LOGO_FULL = "logo_full";
+    
+    public int likeaantal;
  
     @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 	@SuppressLint("NewApi")
@@ -66,6 +75,7 @@ public class DetailDeelnemers extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.detail_deelnemers);
+        buttonListener();
         
          // getting product details from intent
         Intent i = getIntent();
@@ -74,10 +84,7 @@ public class DetailDeelnemers extends Activity {
         pid = i.getStringExtra(TAG_PID);
  
         // Getting complete product details in background thread
-        new GetProductDetails().execute();
-        
-       
-        
+        new GetProductDetails().execute();                 
            
         if (android.os.Build.VERSION.SDK_INT > 8) 
         {
@@ -188,5 +195,98 @@ public class DetailDeelnemers extends Activity {
             pDialog.dismiss();
         }
     }
+    
+    public void buttonListener()  
+	{
+    	likeButton = (ImageButton) findViewById(R.id.like); 
+    	likeButton.setOnClickListener(new OnClickListener()
+		{
+        	
+			@Override
+			public void onClick(View arg0) 
+			{
+					verhoogAantalLikes(likeaantal);		
+									
+					// starting background task to update product
+					new updateLikes().execute();
+			}
+		});
+    }
+    
+    protected void verhoogAantalLikes(int stemaantal) 
+	{
+		String aantalLikes = txtLikes.getText().toString();
+		likeaantal = Integer.parseInt(aantalLikes);
+		likeaantal = likeaantal + 1;
+		txtLikes.setText(Integer.toString(likeaantal));
+	}
+
+    class updateLikes extends AsyncTask<String, String, String> {
+
+		/**
+		 * Before starting background thread Show Progress Dialog
+		 * */
+		@Override
+		protected void onPreExecute() {
+			super.onPreExecute();
+			pDialog = new ProgressDialog(DetailDeelnemers.this);
+			pDialog.setMessage("Stem verwerken ...");
+			pDialog.setIndeterminate(false);
+			pDialog.setCancelable(true);
+			pDialog.show();
+		}
+
+		/**
+		 * Saving product
+		 * */
+		protected String doInBackground(String... args) {
+
+			// getting updated data from EditTexts
+			String likes = txtLikes.getText().toString();
+
+			// Building Parameters
+			List<NameValuePair> params = new ArrayList<NameValuePair>();
+			params.add(new BasicNameValuePair(TAG_PID, pid));
+			params.add(new BasicNameValuePair(TAG_LIKES, likes));
+
+			// sending modified data through http request
+			// Notice that update product url accepts POST method
+			JSONObject json = jsonParser.makeHttpRequest(url_update_likes,
+					"POST", params);
+
+			// check json success tag
+			try {
+				int success = json.getInt(TAG_SUCCESS);
+				
+				if (success == 1) {
+					// successfully updated
+					Intent i = getIntent();
+					// send result code 100 to notify about product update
+					setResult(100, i);
+		            startActivity(i);
+
+				
+	               					
+				} else {
+					// failed to update product
+				}
+			} catch (JSONException e) {
+				e.printStackTrace();
+			}
+
+			return null;
+		}
+
+
+		/**
+		 * After completing background task Dismiss the progress dialog
+		 * **/
+		protected void onPostExecute(String file_url) {
+			// dismiss the dialog once product uupdated
+			pDialog.dismiss();
+
+		}
+	}
+
  
     }

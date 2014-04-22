@@ -25,13 +25,14 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
 public class StemBevestiging extends Activity {
 	 
-	static Button bevestigButton;
+	static ImageButton bevestigButton;
 	EditText txtStemmen;
 	public String aantalstemmen;
 	
@@ -43,6 +44,7 @@ public class StemBevestiging extends Activity {
     TextView txtDeelnemers;
     TextView txtOpdrachtgever;
     String pid;
+    static String stemNaam;
  
     // Progress Dialog
     private ProgressDialog pDialog;
@@ -181,7 +183,7 @@ public class StemBevestiging extends Activity {
     
     public void buttonListener()  
 	{
-        bevestigButton = (Button) findViewById(R.id.bevestigButton); 
+        bevestigButton = (ImageButton) findViewById(R.id.bevestigButton); 
         bevestigButton.setOnClickListener(new OnClickListener()
 		{
         	
@@ -246,7 +248,7 @@ public class StemBevestiging extends Activity {
 					Intent i = getIntent();
 					// send result code 100 to notify about product update
 					setResult(100, i);
-
+					stemNaam = txtNaam.getText().toString();
 					finish();
 					
 				

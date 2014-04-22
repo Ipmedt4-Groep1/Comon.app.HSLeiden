@@ -164,11 +164,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
-                <ImageView
+                <LinearLayout>
+                <ImageButton
                     android:id="@+id/like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
+                    android:background="@null"                    
                     android:src="@drawable/like" />
 
                 <TextView
@@ -178,6 +180,7 @@
                     android:layout_margin="5dip"
                     android:layout_marginBottom="15dip"
                     android:textSize="15dp" />
+                </LinearLayout>                
             </TableRow>
         </TableLayout>
     </ScrollView>
