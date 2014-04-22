@@ -1,5 +1,7 @@
 package hsleiden.app.comon;
 
+import hsleiden.app.comon.DetailDeelnemers.updateLikes;
+
 import java.util.ArrayList;
 import java.util.List;
 import com.example.comonnavigation.R;
@@ -19,14 +21,19 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
+import android.view.View;
 import android.view.Window;
+import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
 public class DetailOpdrachtgevers extends Activity {
 	 
+    static ImageButton terugButton;
+	
     TextView txtNaam;
     TextView txtBeschrijving;
     TextView txtWebsite;
@@ -57,6 +64,7 @@ public class DetailOpdrachtgevers extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.detail_opdrachtgevers);
+        buttonListener();
         
          // getting product details from intent
         Intent i = getIntent();
@@ -74,6 +82,21 @@ public class DetailOpdrachtgevers extends Activity {
         }
  
     }
+    
+    public void buttonListener()  
+   	{
+       	terugButton = (ImageButton) findViewById(R.id.imageButton1); 
+       	terugButton.setOnClickListener(new OnClickListener()
+   		{
+           	
+   			@Override
+   			public void onClick(View arg0) 
+   			{
+   	            Intent intent = new Intent(getApplicationContext(), Opdrachtgevers.class);
+   	            startActivity(intent);
+   			}
+   		});
+       }
  
     /**
      * Background Async Task to Get complete product details

@@ -2,6 +2,8 @@ package hsleiden.app.comon;
 
 import com.example.comonnavigation.R;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;
@@ -31,8 +33,7 @@ public class Main extends Activity {
 		super.onCreate(savedInstanceState);
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.activity_main);
-		buttonListener();
-		
+		buttonListener();		
 	}
 	
 	//de buttonListener methode zorgt ervoor dat er een nieuwe activity (pagina in de app) wordt aangeroepen wanneer

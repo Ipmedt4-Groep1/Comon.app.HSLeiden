@@ -31,6 +31,7 @@ public class DetailDeelnemers extends Activity {
 	 
 	public String aantalLikes;
     static ImageButton likeButton;
+    static ImageButton terugButton;
 	
     TextView txtNaam;
     TextView txtBeschrijving;
@@ -209,6 +210,17 @@ public class DetailDeelnemers extends Activity {
 									
 					// starting background task to update product
 					new updateLikes().execute();
+			}
+		});
+    	terugButton = (ImageButton) findViewById(R.id.imageButton1); 
+    	terugButton.setOnClickListener(new OnClickListener()
+		{
+        	
+			@Override
+			public void onClick(View arg0) 
+			{
+				 Intent intent = new Intent(getApplicationContext(), Deelnemers.class);
+	   	         startActivity(intent);
 			}
 		});
     }
