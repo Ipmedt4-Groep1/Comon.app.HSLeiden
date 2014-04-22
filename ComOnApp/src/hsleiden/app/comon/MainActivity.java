@@ -20,12 +20,14 @@ public class MainActivity extends Activity {
 		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.main_activity);
 		
+		//er wordt een nieuwe thread aangemaakt
 		Thread splashscreen = new Thread()
 		{
 			public void run()
 			{
 				try
 				{
+					//na 2 seconden wordt de run methode doorgestart
 					sleep(2000);
 				}
 				catch(Exception e)
@@ -33,12 +35,14 @@ public class MainActivity extends Activity {
 					e.printStackTrace();
 				}
 				finally
-				{					
+				{		
+					//het startscherm van de app wordt getoond
 					startActivity(new Intent(getApplicationContext(), Main.class));
 					finish();					
 				}
 			}
 		};
+		//het starten van de thread
 		splashscreen.start();
 	}
 	

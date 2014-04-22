@@ -18,8 +18,13 @@ public class Info extends Activity
 	public void onCreate(Bundle savedInstanceState) 
 	{
 		super.onCreate(savedInstanceState);
-		 requestWindowFeature(Window.FEATURE_NO_TITLE);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
+		//geeft de pagina de goede layout
+		//in deze layout staat de tekst die op deze pagina moet verschijnen
+		
 		setContentView(R.layout.info_layout);
+		//methode buttonListener() wordt aangeroepen om de menu knop linksboven
+		//terug te laten keren naar de startpagina
 		buttonListener();
 	}
 	
@@ -31,6 +36,8 @@ public class Info extends Activity
 			@Override
 			public void onClick(View arg0) 
 			{
+				//huidige intent wordt opgehaald en vervangen door Main.class
+				//wanneer op de infoMenu knop wordt gedrukt
 				Intent intent = new Intent(getApplicationContext(), Main.class);
                 startActivity(intent); 
 			}		

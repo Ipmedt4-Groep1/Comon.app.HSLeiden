@@ -35,21 +35,21 @@ public class Stemmen extends ListActivity {
 	// Progress Dialog
     private ProgressDialog pDialog;
  
-    // Creating JSON Parser object
+    //JSON Parser object
     JSONParser jParser = new JSONParser();
     
     ArrayList<HashMap<String, String>> studentenbedrijfjesList;
     
-    // url to get all products list
+    //url om alle studentenbedrijfjes (namen) op te halen
     private static String url_all_studentenbedrijfjes = "http://www.jellescheer.nl/get_all_studentenbedrijfjes.php";
     
-    // JSON Node names
+    // JSON Node namen die nodig zijn voor de connectie
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
     private static final String TAG_PID = "pid";
     private static final String TAG_NAAM = "naam";
 
-    // products JSONArray
+    //JSONArray
     JSONArray studentenbedrijfjes = null; 
 	
 	@Override
@@ -60,17 +60,16 @@ public class Stemmen extends ListActivity {
 		setContentView(R.layout.stemmen_layout);
 		buttonListener();
 		
-        // Hashmap for ListView
+        // Hashmap voor de ListView waar de namen in komen te staan die uit de database worden gehaald
 		studentenbedrijfjesList = new ArrayList<HashMap<String, String>>();
         
-        // Loading products in Background Thread
+        // Laden van studentenbedrijfjes in Background Thread
         new LoadAllStudentenbedrijfjes().execute();
 
-        // Get listview
+        //Get listview
         ListView lv = getListView();
         
-        // on seleting single product
-        // launching Edit Product Screen
+        //Bij het klikken op een van de namen wordt het stembevestigingsstem getoond
         lv.setOnItemClickListener(new OnItemClickListener() {
         	 
             @Override
@@ -94,6 +93,7 @@ public class Stemmen extends ListActivity {
 	
     private void buttonListener() 
     {
+    	//als op de menu knop bovenin wordt gedrukt, wordt het startscherm weer getoond
     	stemMenu = (ImageButton) findViewById(R.id.imageButton1);
 		stemMenu.setOnClickListener(new OnClickListener() 
 		{
@@ -106,17 +106,17 @@ public class Stemmen extends ListActivity {
 		});	
 	}
 
-	// Response from Edit Product Activity
+	// Response van stem bevestigen
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         // if result code 100
         if (resultCode == 100) {
             // if result code 100 is received
-            // means user edited/deleted product
+            // means user voted on studentenbedrijfje
             // reload this screen again
             Intent intent = new Intent(getApplicationContext(), Main.class);
-           // finish();
+           //het stemID wordt op 1 gezet in plaats van 0
             Main.stemId = 1;
             Main.stem = StemBevestiging.stemNaam;
             startActivity(intent);
@@ -198,7 +198,7 @@ public class Stemmen extends ListActivity {
                             R.layout.list_stemmen_layout, new String[] {TAG_PID,
                                     TAG_NAAM},
                             new int[] { R.id.pid, R.id.naam});
-                    // updating listview
+                    //listview updaten
                     setListAdapter(adapter);
                 }
             });
@@ -206,6 +206,4 @@ public class Stemmen extends ListActivity {
         }
  
     }
-	
-	
 }

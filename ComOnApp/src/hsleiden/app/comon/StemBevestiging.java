@@ -31,7 +31,8 @@ import android.widget.TextView;
 @TargetApi(Build.VERSION_CODES.GINGERBREAD)
 @SuppressLint("NewApi")
 public class StemBevestiging extends Activity {
-	 
+	
+	//variabelen die nodig zijn in deze klasse
 	static ImageButton bevestigButton;
 	EditText txtStemmen;
 	public String aantalstemmen;
@@ -49,15 +50,15 @@ public class StemBevestiging extends Activity {
     // Progress Dialog
     private ProgressDialog pDialog;
  
-    // JSON parser class
+    // JSON parser
     JSONParser jsonParser = new JSONParser();
  
-    // single product url
+    //url's die we nodig hebben vanaf de server
     private static final String url_product_detials = "http://www.jellescheer.nl/get_stem_details.php";
     
 	private static final String url_update_stemmen = "http://www.jellescheer.nl/update_stemmen.php";
 
-    // JSON Node names
+    // JSON Node namen
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
     private static final String TAG_PID = "pid";
@@ -94,7 +95,7 @@ public class StemBevestiging extends Activity {
     }
  
     /**
-     * Background Async Task to Get complete product details
+     * Background Async Task to Get complete stem details
      * */
     class GetProductDetails extends AsyncTask<String, String, String> {
  
@@ -144,16 +145,16 @@ public class StemBevestiging extends Activity {
                             // get first product object from JSON Array
                             JSONObject product = productObj.getJSONObject(0);
  
-                            // product with this pid found
+                            // studentenbedrijfje with this pid found
                             // Edit Text
                             txtNaam = (TextView) findViewById(R.id.inputNaam);
                             txtSoort = (TextView) findViewById(R.id.inputSoort);
                             txtOpdrachtgever = (TextView) findViewById(R.id.inputOpdrachtgever);
                             txtDeelnemers = (TextView) findViewById(R.id.inputDeelnemers);
                             txtStemmen = (EditText) findViewById(R.id.aantalstemmen);
- //                           txtStemmen.setVisibility(View.GONE);
+                            //txtStemmen.setVisibility(View.GONE);
                                                         
-                             // display product data in EditText
+                             // info studentenbedrijfe in EditText
                             txtNaam.setText(product.getString(TAG_NAAM));
                             txtSoort.setText(product.getString(TAG_SOORT));
                             txtOpdrachtgever.setText(product.getString(TAG_OPDRACHTGEVER));
@@ -181,6 +182,7 @@ public class StemBevestiging extends Activity {
         }
     }
     
+    //methode om de knop te laten functioneren
     public void buttonListener()  
 	{
         bevestigButton = (ImageButton) findViewById(R.id.bevestigButton); 
@@ -190,14 +192,17 @@ public class StemBevestiging extends Activity {
 			@Override
 			public void onClick(View arg0) 
 			{
+					//methode om het aantal stemmen te verhogen aanroepen
 					verhoogAantalStemmen(stemaantal);		
 									
-					// starting background task to update product
+					// starting background task to update stemmen
 					new updateStemmen().execute();
 			}
 		});
     }
 
+    //methode om het aantal stemmen uit naar een int te zetten
+    //en deze met 1 te verhogen
 	protected void verhoogAantalStemmen(int stemaantal) 
 	{
 		String aantalstemmen = txtStemmen.getText().toString();
@@ -222,7 +227,7 @@ public class StemBevestiging extends Activity {
 		}
 
 		/**
-		 * Saving product
+		 * Saving stemmen
 		 * */
 		protected String doInBackground(String... args) {
 
@@ -248,12 +253,10 @@ public class StemBevestiging extends Activity {
 					Intent i = getIntent();
 					// send result code 100 to notify about product update
 					setResult(100, i);
+					//naam van het studentenbedrijfje wordt naar een string vertaald voor op het startscherm
 					stemNaam = txtNaam.getText().toString();
 					finish();
-					
-				
-	                
-					
+
 				} else {
 					// failed to update product
 				}
@@ -269,7 +272,7 @@ public class StemBevestiging extends Activity {
 		 * After completing background task Dismiss the progress dialog
 		 * **/
 		protected void onPostExecute(String file_url) {
-			// dismiss the dialog once product uupdated
+			// dismiss the dialog once product updated
 			pDialog.dismiss();
 
 		}
