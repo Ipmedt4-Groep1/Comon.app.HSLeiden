@@ -151,7 +151,7 @@ public class StemBevestiging extends Activity {
                             txtOpdrachtgever = (TextView) findViewById(R.id.inputOpdrachtgever);
                             txtDeelnemers = (TextView) findViewById(R.id.inputDeelnemers);
                             txtStemmen = (EditText) findViewById(R.id.aantalstemmen);
-                            //aantalStemmen.setVisibility(View.GONE);
+ //                           txtStemmen.setVisibility(View.GONE);
                                                         
                              // display product data in EditText
                             txtNaam.setText(product.getString(TAG_NAAM));
