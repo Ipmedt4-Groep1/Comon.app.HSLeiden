@@ -52,7 +52,9 @@ public class Kalender extends Activity {
 		GridView gridview = (GridView) findViewById(R.id.gridview);
 		gridview.setAdapter(adapter);
 		
-		//event details when clicked upon
+		showToast("Evenementen ophalen..");		
+		
+		//details van evenementen
 		evenementTitel = (TextView) findViewById(R.id.evenementTitel);
 		evenementDatum = (TextView) findViewById(R.id.evenementDatum);
 		evenementOmschrijving = (TextView) findViewById(R.id.evenementOmschrijving);
@@ -106,90 +108,76 @@ public class Kalender extends Activity {
 					refreshCalendar();
 				}
 				((KalenderAdapter) parent.getAdapter()).setSelected(v);
-				//event details
+				//evenementen details
 				if (selectedGridDate.equals("2014-01-01"))
 				{
-					evenementTitel.setText("Sander slaan");
+					evenementTitel.setText("Nieuwjaarsdag");
 					evenementDatum.setText("2014-01-01");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementOmschrijving.setText("Gelukkig nieuw jaar!");
+					evenementLocatie.setText("");
 				}
-				else if (selectedGridDate.equals("2014-02-02"))
+				else if (selectedGridDate.equals("2014-02-14"))
 				{
-					evenementTitel.setText("Dennis slaan");
-					evenementDatum.setText("2014-02-02");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Valentijnsdag");
+					evenementDatum.setText("2014-02-14");
+					evenementOmschrijving.setText("Dag van de liefde!");
+					evenementLocatie.setText("De kroeg");
 				}
-				else if (selectedGridDate.equals("2014-03-03"))
+				else if (selectedGridDate.equals("2014-03-30"))
 				{
-					evenementTitel.setText("Peter slaan");
-					evenementDatum.setText("2014-03-03");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Zomertijd");
+					evenementDatum.setText("2014-03-30");
+					evenementOmschrijving.setText("Uurtje minder slapen!");
+					evenementLocatie.setText("De wereld");
 				}
-				else if (selectedGridDate.equals("2014-04-04"))
+				else if (selectedGridDate.equals("2014-04-20"))
 				{
-					evenementTitel.setText("Jaimy slaan");
-					evenementDatum.setText("2014-04-04");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Pasen");
+					evenementDatum.setText("2014-04-20");
+					evenementOmschrijving.setText("Paaseieren zoeken!");
+					evenementLocatie.setText("De achtertuin");
 				}
 				else if (selectedGridDate.equals("2014-05-05"))
 				{
-					evenementTitel.setText("Jelle aaien");
+					evenementTitel.setText("Bevrijdingsdag");
 					evenementDatum.setText("2014-05-05");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementOmschrijving.setText("Twee minuten stilte.");
+					evenementLocatie.setText("Nederland");
 				}
-				else if (selectedGridDate.equals("2014-06-06"))
+				else if (selectedGridDate.equals("2014-06-08"))
 				{
-					evenementTitel.setText("William slaan");
-					evenementDatum.setText("2014-06-06");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Pinksteren");
+					evenementDatum.setText("2014-06-08");
+					evenementOmschrijving.setText("Jezus stond op uit zijn middagdutje.");
+					evenementLocatie.setText("");
 				}
-				else if (selectedGridDate.equals("2014-07-07"))
+				else if (selectedGridDate.equals("2014-07-28"))
 				{
-					evenementTitel.setText("Gydo slaan");
-					evenementDatum.setText("2014-07-07");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Suikerfeest");
+					evenementDatum.setText("2014-07-28");
+					evenementOmschrijving.setText("OMNOMNOM");
+					evenementLocatie.setText("");
 				}
-				else if (selectedGridDate.equals("2014-08-08"))
+				else if (selectedGridDate.equals("2014-09-16"))
 				{
-					evenementTitel.setText("Barry slaan");
-					evenementDatum.setText("2014-08-08");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Prinsjesdag");
+					evenementDatum.setText("2014-09-16");
+					evenementOmschrijving.setText("Helemaal niet belangrijk eigenlijk.");
+					evenementLocatie.setText("");
 				}
-				else if (selectedGridDate.equals("2014-09-09"))
+				else if (selectedGridDate.equals("2014-10-04"))
 				{
-					evenementTitel.setText("Ami slaan");
-					evenementDatum.setText("2014-09-09");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Dierendag");
+					evenementDatum.setText("2014-10-04");
+					evenementOmschrijving.setText("Geef m een koekje extra.");
+					evenementLocatie.setText("");
 				}
-				else if (selectedGridDate.equals("2014-10-10"))
+				else if (selectedGridDate.equals("2014-12-31"))
 				{
-					evenementTitel.setText("Rutger slaan");
-					evenementDatum.setText("2014-10-10");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
-				}
-				else if (selectedGridDate.equals("2014-11-11"))
-				{
-					evenementTitel.setText("Jos slaan");
-					evenementDatum.setText("2014-11-11");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
-				}
-				else if (selectedGridDate.equals("2014-12-12"))
-				{
-					evenementTitel.setText("Vincent slaan");
-					evenementDatum.setText("2014-12-12");
-					evenementOmschrijving.setText("Willem vs Sander, TO THE DEATH");
-					evenementLocatie.setText("Noordwijk");
+					evenementTitel.setText("Oudejaarsdag");
+					evenementDatum.setText("2014-12-31");
+					evenementOmschrijving.setText("Je bent een runt als je met vuurwerk stunt.");
+					evenementLocatie.setText("");
 				}
 				else
 				{
@@ -240,7 +228,6 @@ public class Kalender extends Activity {
 		adapter.refreshDays();
 		adapter.notifyDataSetChanged();
 		handler.post(calendarUpdater); // generate some calendar items
-		showToast("Loading events");		
 
 		title.setText(android.text.format.DateFormat.format("MMMM yyyy", month));
 	}
@@ -259,17 +246,15 @@ public class Kalender extends Activity {
 				itemvalue = df.format(itemmonth.getTime());
 				itemmonth.add(GregorianCalendar.DATE, 1);
 				items.add("2014-01-01");
-				items.add("2014-02-02");
-				items.add("2014-03-03");
-				items.add("2014-04-04");
+				items.add("2014-02-14");
+				items.add("2014-03-30");
+				items.add("2014-04-20");
 				items.add("2014-05-05");
-				items.add("2014-06-06");
-				items.add("2014-07-07");
-				items.add("2014-08-08");
-				items.add("2014-09-09");
-				items.add("2014-10-10");
-				items.add("2014-11-11");
-				items.add("2014-12-12");
+				items.add("2014-06-08");
+				items.add("2014-07-28");
+				items.add("2014-09-16");
+				items.add("2014-10-04");
+				items.add("2014-12-31");
 			}
 
 			adapter.setItems(items);
