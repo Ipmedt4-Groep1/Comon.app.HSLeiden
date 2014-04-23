@@ -67,9 +67,9 @@ public final class R {
     public static final class id {
         public static final int RelativeLayout1=0x7f080000;
         public static final int Spacebreaker=0x7f080026;
-        public static final int aantalstemmen=0x7f080033;
-        public static final int action_settings=0x7f080034;
-        public static final int bevestigButton=0x7f080032;
+        public static final int aantalstemmen=0x7f080034;
+        public static final int action_settings=0x7f080035;
+        public static final int bevestigButton=0x7f080033;
         public static final int date=0x7f08001f;
         public static final int date_icon=0x7f080020;
         public static final int deelnemerButton=0x7f080008;
@@ -83,7 +83,7 @@ public final class R {
         public static final int imageView1=0x7f080002;
         public static final int imageView2=0x7f080001;
         public static final int imageView3=0x7f08000c;
-        public static final int imageView4=0x7f080030;
+        public static final int imageView4=0x7f080031;
         public static final int infoButton=0x7f080004;
         public static final int inputBeschrijving=0x7f080012;
         public static final int inputDeelnemers=0x7f080018;
@@ -102,8 +102,9 @@ public final class R {
         public static final int opdrachtgeverButton=0x7f080007;
         public static final int pid=0x7f08002b;
         public static final int previous=0x7f080022;
-        public static final int progressBar1=0x7f08002f;
+        public static final int progressBar1=0x7f080030;
         public static final int stemButton=0x7f08000b;
+        public static final int stemmen=0x7f08002f;
         public static final int tableRow1=0x7f080003;
         public static final int tableRow10=0x7f08001b;
         public static final int tableRow2=0x7f080006;
@@ -116,7 +117,7 @@ public final class R {
         public static final int tableRow9=0x7f080019;
         public static final int textView1=0x7f08001e;
         public static final int title=0x7f080023;
-        public static final int twitterlist1=0x7f080031;
+        public static final int twitterlist1=0x7f080032;
         public static final int username=0x7f08002d;
     }
     public static final class layout {

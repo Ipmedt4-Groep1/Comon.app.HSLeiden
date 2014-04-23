@@ -14,6 +14,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.provider.Settings.Secure;
 import android.view.View;
+import android.view.Window;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -41,6 +42,7 @@ public class Kalender extends Activity {
 		
 		//haal de kalender_layout op
 		super.onCreate(savedInstanceState);
+		requestWindowFeature(Window.FEATURE_NO_TITLE);
 		setContentView(R.layout.kalender_layout);
 		 Locale.setDefault( Locale.US );
 		 //gregoriancalendar is een standaard android calendar

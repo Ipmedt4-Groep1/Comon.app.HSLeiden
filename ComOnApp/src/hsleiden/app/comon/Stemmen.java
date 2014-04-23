@@ -26,9 +26,15 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
-public class Stemmen extends ListActivity {
+public class Stemmen extends ListActivity 
+{
+	//een ID om te bepalen of er al een stem is uitgebracht
+	//deze staat standaard op 0
+	static int stemId = 0;
+	static String stem;
 	
 	ImageButton stemMenu;
 	
@@ -48,6 +54,7 @@ public class Stemmen extends ListActivity {
     private static final String TAG_STUDENTENBEDRIJFJES = "studentenbedrijfjes";
     private static final String TAG_PID = "pid";
     private static final String TAG_NAAM = "naam";
+    private static final String TAG_STEMMEN = "stemmen";
 
     //JSONArray
     JSONArray studentenbedrijfjes = null; 
@@ -75,18 +82,28 @@ public class Stemmen extends ListActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, final View view, int position, long id) 
             {
-            	
-               // getting values from selected ListItem
-                String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
-                
-                Intent in = new Intent(getApplicationContext(), StemBevestiging.class);
-                
-                // sending pid to next activity
-                in.putExtra(TAG_PID, pid);
- 
-                // starting new activity and expecting some response back
-                startActivityForResult(in, 100);
-                        
+            	//als het stemID de waarde 0 heeft wordt de stempagina getoond
+				//wanneer op de stemButton wordt gedrukt
+            	if (stemId == 0)
+				{
+            	    // getting values from selected ListItem
+                    String pid = ((TextView) view.findViewById(R.id.pid)).getText().toString();
+                    
+                    Intent in = new Intent(getApplicationContext(), StemBevestiging.class);
+                    
+                    // sending pid to next activity
+                    in.putExtra(TAG_PID, pid);
+     
+                    // starting new activity and expecting some response back
+                    startActivityForResult(in, 100);
+	            }
+				//wanneer het stemID een andere waarde heeft wordt er een toast bericht
+				//getoond met daarin de melding dat er al gestemd is op een van de 
+				//studentenbedrijfjes (en op welke)
+				else
+				{
+					Toast.makeText(getApplicationContext(), "U heeft al gestemd op " + stem + "." + "\n" + "U kunt niet meer stemmen", Toast.LENGTH_LONG).show();
+				}                       
             } 
             });
     }
@@ -116,9 +133,9 @@ public class Stemmen extends ListActivity {
             // means user voted on studentenbedrijfje
             // reload this screen again
             Intent intent = new Intent(getApplicationContext(), Main.class);
-           //het stemID wordt op 1 gezet in plaats van 0
-            Main.stemId = 1;
-            Main.stem = StemBevestiging.stemNaam;
+           //het stemID wordt op 1 gezet in plaats van 0           
+            stemId = 1;
+            stem = StemBevestiging.stemNaam;
             startActivity(intent);
         }
     }
@@ -161,6 +178,7 @@ public class Stemmen extends ListActivity {
                         // Storing each json item in variable
                         String id = c.getString(TAG_PID);
                         String naam = c.getString(TAG_NAAM);
+                        String stem = c.getString(TAG_STEMMEN);
  
                         // creating new HashMap
                         HashMap<String, String> map = new HashMap<String, String>();
@@ -168,6 +186,7 @@ public class Stemmen extends ListActivity {
                         // adding each child node to HashMap key => value
                         map.put(TAG_PID, id);
                         map.put(TAG_NAAM, naam);
+                        map.put(TAG_STEMMEN, stem);
  
                         // adding HashList to ArrayList
                         studentenbedrijfjesList.add(map);
@@ -196,8 +215,8 @@ public class Stemmen extends ListActivity {
                     ListAdapter adapter = new SimpleAdapter(
                             Stemmen.this, studentenbedrijfjesList,
                             R.layout.list_stemmen_layout, new String[] {TAG_PID,
-                                    TAG_NAAM},
-                            new int[] { R.id.pid, R.id.naam});
+                                    TAG_NAAM, TAG_STEMMEN},
+                            new int[] { R.id.pid, R.id.naam, R.id.stemmen});
                     //listview updaten
                     setListAdapter(adapter);
                 }

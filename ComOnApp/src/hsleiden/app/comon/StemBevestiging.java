@@ -34,7 +34,7 @@ public class StemBevestiging extends Activity {
 	
 	//variabelen die nodig zijn in deze klasse
 	static ImageButton bevestigButton;
-	EditText txtStemmen;
+	TextView txtStemmen;
 	public String aantalstemmen;
 	
     TextView txtNaam;
@@ -151,7 +151,7 @@ public class StemBevestiging extends Activity {
                             txtSoort = (TextView) findViewById(R.id.inputSoort);
                             txtOpdrachtgever = (TextView) findViewById(R.id.inputOpdrachtgever);
                             txtDeelnemers = (TextView) findViewById(R.id.inputDeelnemers);
-                            txtStemmen = (EditText) findViewById(R.id.aantalstemmen);
+                            txtStemmen = (TextView) findViewById(R.id.aantalstemmen);
                             //txtStemmen.setVisibility(View.GONE);
                                                         
                              // info studentenbedrijfe in EditText
